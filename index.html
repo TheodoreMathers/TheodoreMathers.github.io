@@ -1,18 +1,18 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jon</title><meta name="author" content="Jon"><meta name="copyright" content="Jon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Jon">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Jon">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
-<meta property="article:author" content="John Doe">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:author" content="Jon">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
-  localSearch: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
   copy: {
     success: 'Copy successfully',
     error: 'Copy error',
@@ -44,16 +44,16 @@
       css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
     }
   },
-  isPhotoFigcaption: false,
+  isPhotoFigcaption: true,
   islazyload: false,
   isanchor: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Hexo',
+  title: 'Jon',
   isPost: false,
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2021-11-15 08:44:18'
+  postUpdate: '2021-11-15 10:27:44'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -124,8 +124,27 @@
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
         
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
@@ -136,23 +155,147 @@
         }
       }
     
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
     const detectApple = () => {
       if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
         document.documentElement.classList.add('apple')
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a></div></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/15/hello-world/" title="Hello World">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/15/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-15T00:39:14.364Z" title="Created 2021-11-15 08:39:14">2021-11-15</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jon</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Jon</h1><div id="site_social_icons"><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-15T02:12:53.526Z" title="Created 2021-11-15 10:12:53">2021-11-15</time></span></div><div class="content">
+          
+作者: Jerry
+連結: https://butterfly.js.org/posts/4aa8abbe/#Gallery相冊圖庫
+來源: Butterfly
+著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件">mac 软件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></span></div><div class="content">infuse
+功能：视频播放器，能读取本地视频的元数据，让本地的视频库也能像在线流媒体一样花里胡哨。还可以通过设置链接 nas，云盘，直播源，或其他设备的硬盘，在 TV 端的实用性更强一点。
+下载：App Store（付费订阅 iCloud 3 端同步）
+NeteaseMusic
+功能：国内音乐获取渠道之一。
+下载：homebrew
+SwitchHosts
+功能：更直观的编辑 hosts 文件
+下载：homebrew
+Thunder
+功能：基本下载软件。
+下载：homebrew
+PDF Unlocker Expert
+功能：解除 PDF 密码。有些 PDF 就算知道密码，也只能查看，不能对其进行任何修改，从里面选几页拖出来，甚至不能打印。用这个工具就可以在知道 PDF 密码的情况下，生成一个完全没有限制的副本。
+下载：App Store（付费买断应用限免入手）
+monitorcontrol
+功能：调节外接显示器的亮度和音量。
+下载：homebrew
+bigjpg
+下载：官网 https://bigjpg.com
+功能：放大图片。有些图片在放大之后就会太模糊用不了，就可以在这个软件里面过 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MacOS 小工具"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具">MacOS 小工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-01T09:04:01.000Z" title="Created 2021-11-01 17:04:01">2021-11-01</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自建 RSS 源"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源">自建 RSS 源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-31T02:41:55.000Z" title="Created 2021-10-31 10:41:55">2021-10-31</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Dev/">Dev</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/RSS/">RSS</a></span></div><div class="content">Step I
+在 GitHub 上 fork RSSHub 仓库，保存。
+Step II
+在腾讯云申请 「云开发 cloudbase」
 
-More info: Writing
-Run server1$ hexo server
+申请好之后，点击新建，选择代码导入。这里填官方的 RSSHub 地址。应用内目录不用填。
 
-More info: Server
-Generate static files1$ hexo generate
+应用配置照这里填。
 
-More info: Generating
-Deploy to remote sites1$ hexo deploy
+开通之后会在「我的应用」里新建一个应用，应该会显示「构建失败」，但是无所谓。
 
-More info: Deployment
-</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/15/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2021-11-15T00:39:14.364Z" title="Created 2021-11-15 08:39:14">2021-11-15</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-11-15T00:44:18.136Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+到「云托管」里选择「新建服务」，填一个名字之后「新建版本」。代码仓库选自己 fork 的仓库，记得修改端口号。
+
+创建好之后，点进创建的服务，访问服务会打开一个新网页，复制网页的链接到 RSSHub Radar 浏览器拓展的设置里面就可以用了。
+More
+其实后来发现 RSSHub 的部署文档里面有一个叫 Vercel 的平台可以一键傻瓜式部署，不过看到有人说订阅链接多了之后会被封，而且平台可能跑路，我还是安心用腾讯云吧。
+其实搞自建源主要是冲着一些社交网站可以直接订阅用户 Feed 的功能去的，这样就不用给我关注的每个人生成一个 RSS 链接来爬他们的动态，只需要给我自己生成一个 RSS 链接，订阅我自己的 Feed 就行。但是仓库里面的配置文件我实在是看不 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-17T08:55:29.000Z" title="Created 2021-10-17 16:55:29">2021-10-17</time></span></div><div class="content">C1	计算机系统概述
+1.2.1	计算机系统的组成
+📖冯诺依曼计算机体系结构的基本思想
+存储程序。将指令以代码的形式事先输入计算机的主存储器，然后按其在存储器中的首地址执行程序的第一条指令，以后就按该程序的规定顺序执行其他指令，直至程序执行结束。
+1.3.1	计算机的主要性能指标
+📖机器字长
+计算机进行一次整数运算所能处理的二进制数据的位数，机器字长一般等于内部寄存器的大小，它决定了计算机的运算精度。
+📖指令字长
+一条指令的二进制代码的位数。
+存储字长
+一个存储单位能存储的二进制代码的长度。
+📖指令字长一般是存储字长的整数倍。现代 CPU 的机器字长和指令字长不一定相等，但两者都是字节的整数倍。
+📖机器周期
+所有指令过程中的一个基准时间。
+📖指令周期
+CPU 取出并执行一条指令所需的全部时间。
+📖一般情况下，一个指令周期包含若干个机器周期，每个指令周期内的机器周期数可以不一样。
+C2	数据的表示和运算
+C3	存储系统
+3.1	存储器概述
+3.1.1	存储器的分类
+Cache
+Cache 是一种 SRAM 存储器，是为了解决 CPU 和主存之间速度不匹配而采用的一项重要硬件 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/10/11/post/%E6%9D%82%E9%A1%B9/macOS-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="macOS 常用命令">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="macOS 常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/11/post/%E6%9D%82%E9%A1%B9/macOS-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="macOS 常用命令">macOS 常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-11T13:19:31.000Z" title="Created 2021-10-11 21:19:31">2021-10-11</time></span></div><div class="content">恢复 launchpad 初始排列
+12defaults write com.apple.dock ResetLaunchPad -bool truekillall Dock
+恢复 Dock 初始排列
+12defaults delete com.apple.dockkillall Dock
+取消登陆密码长度限制
+1pwpolicy -clearaccountpolicies
+强制退出占用端口的进程
+12sudo lsof -i:7070        #(搜索占用端口号进程的PID)sudo kill －9 PID        #(强制退出PID)
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/10/11/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%A1%B9%E7%9B%AE/DLL-%E6%9C%A8%E9%A9%AC%E6%A8%A1%E6%8B%9F%E7%A8%8B%E5%BA%8F/" title="DLL 木马模拟程序">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DLL 木马模拟程序"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/11/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%A1%B9%E7%9B%AE/DLL-%E6%9C%A8%E9%A9%AC%E6%A8%A1%E6%8B%9F%E7%A8%8B%E5%BA%8F/" title="DLL 木马模拟程序">DLL 木马模拟程序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-11T11:40:23.000Z" title="Created 2021-10-11 19:40:23">2021-10-11</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E7%A7%91/">本科</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E7%A7%91/%E9%A1%B9%E7%9B%AE/">项目</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/">软件安全</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/C/">C</a></span></div><div class="content">题目
+木马是一种恶意程序，一般利用计算机系统或第三方软件的漏洞植入到目标计算机，并在主机上隐蔽运行，执行未经授权的操作，以窃取远程主机上的私密信息。木马主要在三个方面进行隐藏：文件隐藏、进程隐藏与通信隐藏。DLL 木马它不以进程形式运行而是由合法进程来加载它，因而在进程管理器中看不到该木马运行痕迹，其完美实现了进程隐蔽。因此，DLL 木马是一个看似普通的 DLL 文件中实现了木马功能的 DLL 文件。
+请编写一个 DLL 木马模拟程序，包括客户端与服务器两部分程序。先行将服务端植入，再进行连接。然后查看进程管理器，分析其进程隐蔽情况。
+分析
+根据题目描述，分析出来以下几个任务：
+
+编写一个带有恶意功能的木马 dll。
+编写一个看似正常的服务端，在其中调用 dll 中的恶意功能。
+编写一个客户端，用来接收服务端发送回来的用户隐私。
+
+过程
+dll
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/10/10/post/%E6%9D%82%E9%A1%B9/Visual-Studio-Code-&amp;-ARM-Windows-11-&amp;-CC++/" title="Visual Studio Code &amp; ARM Windows 11 &amp; C/C++">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Visual Studio Code &amp; ARM Windows 11 &amp; C/C++"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/10/post/%E6%9D%82%E9%A1%B9/Visual-Studio-Code-&amp;-ARM-Windows-11-&amp;-CC++/" title="Visual Studio Code &amp; ARM Windows 11 &amp; C/C++">Visual Studio Code &amp; ARM Windows 11 &amp; C/C++</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-10T08:08:41.000Z" title="Created 2021-10-10 16:08:41">2021-10-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Dev/">Dev</a></span></div><div class="content">mingw
+这个网站下载 👉 https://bit.ly/mingw10
+因为我对 Windows 的一些系统路径不是很熟悉，我就直接把 mingw 装在 C 盘根目录下了。
+
+安装好之后，拷贝 mingw/bin 的路径，添加到环境变量。
+
+选中 Path ，Edit。
+
+New 之后拷贝进去保存即可。
+
+Code Runner
+和在 mac 配置一样，修改设置使其能一次性编译所有源文件。
+
+Debug
+和在 mac 配置一样。
+看来以后 debug 要开 windows 虚拟机才行 🤡
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/10/10/post/%E6%9D%82%E9%A1%B9/Visual-Studio-Code-&amp;-M1-Mac-&amp;-CC++/" title="Visual Studio Code &amp; M1 Mac &amp; C/C++">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Visual Studio Code &amp; M1 Mac &amp; C/C++"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/10/post/%E6%9D%82%E9%A1%B9/Visual-Studio-Code-&amp;-M1-Mac-&amp;-CC++/" title="Visual Studio Code &amp; M1 Mac &amp; C/C++">Visual Studio Code &amp; M1 Mac &amp; C/C++</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-10-10T07:40:20.000Z" title="Created 2021-10-10 15:40:20">2021-10-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Dev/">Dev</a></span></div><div class="content">Code Runner
+Code Runner 这个插件的工作原理其实就是在你点击运行按钮时 ▶️ 自动执行编译和运行命令。
+对于 C/C++ 程序来说，如果程序只有一个源文件，可以直接使用 Code Runner 编译运行。但是如果程序有多个源文件，就需要进行额外设置。
+在 Code Runner 的设置中找到这一项，选择 Edit in setting.jason。
+
+在最后添加 “code-runner.executorMap” 这一项，里面的内容会自动生成。
+
+修改 c 和 cpp 后面的命令，将 ${file} 修改为 *.c 和 *cpp，这样在点击开始按钮时，Code Runner 就会编译当前目录下的所有源文件，而不仅仅是当前文件。
+Debug
+截止目前，vscode 还没有支持 M1 原生 debug，找到的一些 workaround 也都挺麻烦，这里记录一下官方给出的旧方法。
+首先新建 task.json。这其实就是用来配置编译命令的文件。
+
+和上面 Code Runner 一样，修改一下参数，让它能一次性编译所有源文件。其余的东西都不用改。
+
+再选择 debug  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/09/25/post/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/Misc/Cyber_german/" title="Cyber_german">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cyber_german"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/25/post/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/Misc/Cyber_german/" title="Cyber_german">Cyber_german</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-09-25T05:17:19.000Z" title="Created 2021-09-25 13:17:19">2021-09-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Events/">Events</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/">羊城杯</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/Misc/">Misc</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/CTF/">CTF</a></span></div><div class="content">题目
+题目给了一个流量包，从流量包里提取出来一个 pdf 文件和一个 txt 文件。pdf 有密码，就是 ftp 连接的密码。
+
+
+分析
+百度 PDF 里面的德语单词发现这是 enigma 密码机的密码本和密文。根据百度到的文档和 enigma 机模拟器解密得到明文。
+模拟器连接
+https://www.101computing.net/enigma-machine-emulator/
+
+VIERSIEBENFUENFSIEBENVIERACHTFUENFVIERSIEBENBERTADREISECHSSECHSZWEIDREINEUNDREISECHSDREISIEBENDREIZWEIDREINULLDREIFUENFSECHSSECHSSECHSFUENFDREISIEBENDREIFUENFDREISIEBENDREINEUNDREIFUENFSECHSSECHSDREIEINSDREINULLDREIVIERDREIACHTDREIFUENFDREISIEBENDREIEINSSECHSDREISECHSSECHSDREIVIERSECHSDREISECHSSECHSSECH ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jon</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title">No title</a><time datetime="2021-11-15T02:12:53.526Z" title="Created 2021-11-15 10:12:53">2021-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"/></a><div class="content"><a class="title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件">mac 软件</a><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MacOS 小工具"/></a><div class="content"><a class="title" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具">MacOS 小工具</a><time datetime="2021-11-01T09:04:01.000Z" title="Created 2021-11-01 17:04:01">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自建 RSS 源"/></a><div class="content"><a class="title" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源">自建 RSS 源</a><time datetime="2021-10-31T02:41:55.000Z" title="Created 2021-10-31 10:41:55">2021-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"/></a><div class="content"><a class="title" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><time datetime="2021-10-17T08:55:29.000Z" title="Created 2021-10-17 16:55:29">2021-10-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            <a class="card-more-btn" href="/categories/" title="More">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">19</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/"><span class="card-category-list-name">Events</span><span class="card-category-list-count">16</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/BUUCTF/"><span class="card-category-list-name">BUUCTF</span><span class="card-category-list-count">15</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/BUUCTF/Basic/"><span class="card-category-list-name">Basic</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/BUUCTF/Misc/"><span class="card-category-list-name">Misc</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/"><span class="card-category-list-name">羊城杯</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/Misc/"><span class="card-category-list-name">Misc</span><span class="card-category-list-count">1</span></a></li></ul></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">3</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/unoptimised/" style="font-size: 1.45em; color: rgb(72, 182, 99)">unoptimised</a><a href="/tags/Dev/" style="font-size: 1.3em; color: rgb(86, 162, 196)">Dev</a><a href="/tags/RSS/" style="font-size: 1.15em; color: rgb(144, 96, 195)">RSS</a><a href="/tags/English/" style="font-size: 1.15em; color: rgb(99, 182, 83)">English</a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.15em; color: rgb(4, 91, 162)">政治</a><a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 1.15em; color: rgb(96, 105, 114)">微积分</a><a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 1.15em; color: rgb(165, 66, 0)">英语</a><a href="/tags/unpotimised/" style="font-size: 1.15em; color: rgb(10, 159, 119)">unpotimised</a><a href="/tags/CTF/" style="font-size: 1.45em; color: rgb(80, 154, 134)">CTF</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.3em; color: rgb(174, 7, 141)">数据库</a><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(192, 24, 108)">软件安全</a><a href="/tags/C/" style="font-size: 1.3em; color: rgb(158, 94, 10)">C</a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.38em; color: rgb(16, 163, 140)">密码学</a><a href="/tags/Java-EE/" style="font-size: 1.22em; color: rgb(47, 131, 69)">Java EE</a><a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 1.15em; color: rgb(190, 181, 40)">数据挖掘</a><a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(178, 105, 148)">网络安全</a><a href="/tags/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(170, 44, 185)">信息系统安全</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.15em; color: rgb(126, 30, 107)">计算机网络</a><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 1.15em; color: rgb(161, 19, 102)">软件工程</a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.22em; color: rgb(157, 76, 70)">编译原理</a><a href="/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/" style="font-size: 1.15em; color: rgb(137, 144, 77)">信息论与编码</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">October 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">September 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">August 2021</span><span class="card-archive-list-count">21</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">July 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">June 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">March 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">January 2021</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">56</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-11-15T02:27:44.829Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Jon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据挖掘 | Jon</title><meta name="keywords" content="unoptimised,数据挖掘"><meta name="author" content="Jon"><meta name="copyright" content="Jon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C1	引言  数据挖掘研究的促发因素 数据库技术的演化 数据坟墓 数据挖掘定义 知识发现过程的步骤 数据挖掘广义定义 数据挖掘系统的主要成分 关系数据库 数据仓库特点（定义） 数据仓库步骤 数据仓库和数据集市 OLAP和OLTP 事务数据库 高级数据库和高级数据库应用 对象关系数据库 空间数据库 时间数据库和时间序列数据库 文本数据库 多媒体数据库 异构数据库和遗产数据库 万维网WWW 数据挖掘任">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据挖掘">
+<meta property="og:url" content="http://example.com/2021/06/21/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/index.html">
+<meta property="og:site_name" content="Jon">
+<meta property="og:description" content="C1	引言  数据挖掘研究的促发因素 数据库技术的演化 数据坟墓 数据挖掘定义 知识发现过程的步骤 数据挖掘广义定义 数据挖掘系统的主要成分 关系数据库 数据仓库特点（定义） 数据仓库步骤 数据仓库和数据集市 OLAP和OLTP 事务数据库 高级数据库和高级数据库应用 对象关系数据库 空间数据库 时间数据库和时间序列数据库 文本数据库 多媒体数据库 异构数据库和遗产数据库 万维网WWW 数据挖掘任">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg">
+<meta property="article:published_time" content="2021-06-21T09:49:39.000Z">
+<meta property="article:modified_time" content="2021-08-04T06:28:25.000Z">
+<meta property="article:author" content="Jon">
+<meta property="article:tag" content="unoptimised">
+<meta property="article:tag" content="数据挖掘">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/06/21/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据挖掘',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-04 14:28:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jon</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据挖掘</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-06-21T09:49:39.000Z" title="Created 2021-06-21 17:49:39">2021-06-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-04T06:28:25.000Z" title="Updated 2021-08-04 14:28:25">2021-08-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91/">本科</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/">重点目录</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据挖掘"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>C1	引言</h1>
+<ol>
+<li>数据挖掘研究的促发因素</li>
+<li>数据库技术的演化</li>
+<li>数据坟墓</li>
+<li>数据挖掘定义</li>
+<li>知识发现过程的步骤</li>
+<li>数据挖掘广义定义</li>
+<li>数据挖掘系统的主要成分</li>
+<li>关系数据库</li>
+<li>数据仓库特点（定义）</li>
+<li>数据仓库步骤</li>
+<li>数据仓库和数据集市</li>
+<li>OLAP和OLTP</li>
+<li>事务数据库</li>
+<li>高级数据库和高级数据库应用</li>
+<li>对象关系数据库</li>
+<li>空间数据库</li>
+<li>时间数据库和时间序列数据库</li>
+<li>文本数据库</li>
+<li>多媒体数据库</li>
+<li>异构数据库和遗产数据库</li>
+<li>万维网WWW</li>
+<li>数据挖掘任务</li>
+<li>数据挖掘功能</li>
+<li>模式有趣的条件</li>
+<li>数据挖掘系统的分类</li>
+<li>分类方法</li>
+<li>数据挖掘的主要问题</li>
+</ol>
+<h1>C2-1	数据仓库与OLAP技术</h1>
+<ol>
+<li>数据仓库的定义</li>
+<li>数据仓库的组成</li>
+<li>加载管理器</li>
+<li>仓库管理器</li>
+<li>查询管理器</li>
+<li>数据仓库的数据模型</li>
+<li>概念模型</li>
+<li>逻辑模型</li>
+<li>物理模型</li>
+<li>维</li>
+<li>维的层次</li>
+<li>维成员</li>
+<li>度量</li>
+<li>粒度</li>
+<li>星型结构</li>
+<li>雪花型结构</li>
+<li>星型雪花型结构</li>
+<li>数据库与数据仓库的区别</li>
+<li>数据库的局限性</li>
+<li>ETL的概念</li>
+<li>ETL的功能</li>
+<li>提高数据质量</li>
+<li>搭建数据仓库</li>
+<li>EAI数据集成</li>
+<li>ETL的目标</li>
+<li>ETL的流程</li>
+<li>数据抽取</li>
+<li>数据转换</li>
+<li>数据清洁</li>
+<li>数据装载</li>
+<li>ETL的组成</li>
+<li>ETL的相关技术</li>
+<li>DTS</li>
+<li>ETL的实现方法</li>
+<li>ETL的工具</li>
+<li>ETL的应用</li>
+<li>UCIS-ETL在统一客户资料系 统中的位置</li>
+<li>电信领域数据仓库的设计与实现</li>
+<li>OLAP的定义、特点</li>
+<li>OLAP与OLTP的不同</li>
+<li>OLAP与数据挖掘的结合——OLAM</li>
+<li>OLAP的分类</li>
+<li>OLAP的典型操作——切片、切块以及旋 转</li>
+</ol>
+<h1>C2-2	数据仓库和数据挖掘的OLAP技术</h1>
+<ol>
+<li>数据处理分为两大类</li>
+<li>事务处理环境不适宜DSS应用的原因</li>
+<li>怎样建立数据仓库</li>
+<li>数据仓库中的数据分类</li>
+<li>数据仓库的主要组成部分</li>
+<li>数据仓库的主要特点</li>
+<li>数据仓库的数据抽取过程</li>
+<li>DW设计与DBS设计的不同</li>
+<li>DW中的元数据</li>
+<li>DW设计步骤</li>
+<li>什么是OLAP</li>
+<li>OLTP与OLAP的关系级比较</li>
+<li>OLAP产品的十二条评价准则</li>
+<li>为什么需要一个分离的数据仓库</li>
+<li>事实星座的度量</li>
+<li>度量的分类和计算</li>
+<li>数据仓库设计过程</li>
+<li>三类数据仓库模型</li>
+<li>OLAP服务器类型</li>
+<li>数据立方体的计算</li>
+</ol>
+<h1>C2-3	数据</h1>
+<ol>
+<li>属性与度量</li>
+<li>属性的类型</li>
+<li>属性值的性质</li>
+<li>离散vs.连续属性</li>
+<li>数据集的重要特性</li>
+<li>数据集类型</li>
+<li>数据质量</li>
+<li>噪声</li>
+<li>离群点</li>
+<li>遗漏值</li>
+<li>不一致的值</li>
+<li>重复数据</li>
+<li>应用问题</li>
+<li>数据预处理</li>
+<li>聚集</li>
+<li>抽样</li>
+<li>维归约</li>
+<li>特征子集选择</li>
+<li>特征构造</li>
+<li>离散化与二元化</li>
+<li>属性变换</li>
+<li>相似性和相异性</li>
+<li>相异度**:**欧氏距离</li>
+<li>闵可夫斯基距离</li>
+<li>距离的性质</li>
+<li>非度量的相异度</li>
+<li>数据对象之间的相似度</li>
+<li>简单匹配系数/ Jaccard系数</li>
+<li>余弦相似度</li>
+<li>相关性</li>
+<li>相关性**:** 可视化</li>
+<li>邻近度计算问题</li>
+</ol>
+<h1>C3-1	数据预处理</h1>
+<ol>
+<li>数据</li>
+<li>属性与度量</li>
+<li>属性的类型</li>
+<li>属性值的性质</li>
+<li>数据集的重要特性</li>
+<li>数据集类型</li>
+<li>有序数据</li>
+<li>数据质量问题</li>
+<li>数据预处理的主要任务</li>
+<li>如何处理空缺值</li>
+<li>如何处理噪声数据</li>
+<li>数据平滑的分箱方法</li>
+<li>聚类</li>
+<li>回归</li>
+<li>数据集成</li>
+<li>处理数据集成中的冗余数据</li>
+<li>数据变换</li>
+<li>数据归约策略</li>
+<li>数据立方体聚集</li>
+<li>维归约</li>
+<li>数据压缩</li>
+<li>数值归约</li>
+<li>直方图</li>
+<li>选样</li>
+<li>离散化</li>
+<li>通过自然划分分段</li>
+<li>属性集的规格</li>
+</ol>
+<h1>C3-2	数据预处理</h1>
+<ol>
+<li>数据预处理的形式</li>
+<li>数据清理</li>
+<li>基本方法</li>
+<li>数据集成和变换</li>
+<li>数据变换</li>
+<li>规范化的方法</li>
+<li>数据归约</li>
+<li>维归约</li>
+<li>数值归约</li>
+<li>选样</li>
+<li>离散化和概念分层</li>
+<li>广州城市规划空间数据的清理</li>
+</ol>
+<h1>C4	数据挖掘原语，语言和系统结构</h1>
+<ol>
+<li>DMQL</li>
+</ol>
+<h1>C5-1	关联规则挖掘</h1>
+<ol>
+<li>关联规则挖掘形式化定义</li>
+<li>关联规则的基本形式</li>
+<li>Apriori方法</li>
+<li>由频繁项集产生关联规则</li>
+<li>挖掘多层关联规则</li>
+</ol>
+<h1>C5-2	概念描述：特征化与比较</h1>
+<ol>
+<li>什么是概念描述</li>
+<li>概念描述与OLAP的比较</li>
+<li>数据概化和基于汇总的特征化</li>
+<li>面向属性归纳</li>
+<li>导出概化的表示</li>
+<li>交叉表</li>
+<li>属性相关分析</li>
+<li>熵与信息增益</li>
+<li>挖掘类比较</li>
+<li>量化区分规则</li>
+<li>类描述</li>
+<li>度量数据的离散度</li>
+<li>计算中心趋势</li>
+<li>数据离散度的计算</li>
+<li>Boxplot Analysis</li>
+<li>盒图</li>
+<li>盒图分析：数据离散度的可视化</li>
+<li>柱状图分析</li>
+<li>分位数图</li>
+<li>散步图</li>
+<li>Loess 曲线</li>
+<li>概念描述的增量挖掘和并行挖掘</li>
+</ol>
+<h1>C6-1	分类和预测</h1>
+<ol>
+<li>分类与预测</li>
+<li>数据分类</li>
+<li>数据准备</li>
+<li>比较分类方法</li>
+<li>用判定树归纳分类</li>
+<li>信息增益</li>
+<li>分类中避免过分适应数据问题</li>
+<li>基本判定树归纳的加强</li>
+<li>判定树归纳的可伸缩性</li>
+<li>贝叶斯分类</li>
+<li>神经网络</li>
+<li>网络训练</li>
+<li>多层感知</li>
+<li>网路剪枝和规则提取</li>
+<li>遗传算法</li>
+<li>模拟进化算法</li>
+<li>全局优化问题</li>
+<li>进化算法与传统算法区别</li>
+<li>懒散学习和急切学习的评论</li>
+<li>什么是预测</li>
+<li>推进和装袋</li>
+</ol>
+<h1>C6-2	挖掘大型数据库中的关联规则</h1>
+<ol>
+<li>关联规则挖掘</li>
+<li>挖掘频繁项集</li>
+<li>怎样产生候选项</li>
+<li>提高 Apriori的有效性方法</li>
+<li>挖掘频繁模式</li>
+<li>从事务数据库构造FP-树</li>
+<li>FP-树结构的带来的优点</li>
+<li>使用FP-树挖掘频繁模式</li>
+<li>挖掘 FP-树的主要步骤</li>
+<li>频繁模式增长</li>
+<li>多层关联规则</li>
+<li>统一支持度 vs. 逐减支持度</li>
+<li>一致的最小支持度</li>
+<li>递减支持度</li>
+<li>多层挖掘：冗余的过滤</li>
+<li>多维关联挖掘：概念</li>
+<li>挖掘多维关联规则的技术</li>
+<li>使用量化属性的静态离散化挖掘多维关联规则</li>
+<li>挖掘量化关联规则</li>
+<li>关联规则聚类系统(ARCS )</li>
+<li>ARCS的局限性</li>
+<li>挖掘基于距离的关联规则</li>
+<li>感兴趣的衡量</li>
+<li>支持度和置信度的不足</li>
+<li>其他的兴趣度衡量方法: Interest</li>
+<li>基于约束的挖掘</li>
+<li>反单调和单调约束</li>
+<li>简洁性约束</li>
+<li>可转化的约束</li>
+<li>约束的各种分类之间的联系</li>
+</ol>
+<h1>C7	关联规则挖掘</h1>
+<ol>
+<li>多维关联规则：概念</li>
+<li>分类属性与量化属性</li>
+<li>量化属性静态离散化挖掘多维关联规则</li>
+<li>量化关联规则</li>
+<li>挖掘基于距离的关联规则</li>
+<li>聚类和距离度量</li>
+<li>兴趣度的度量</li>
+<li>支持度-置信度方法的不足</li>
+<li>提升兴趣度度量</li>
+<li>基于约束的挖掘</li>
+</ol>
+<h1>C8	聚类分析</h1>
+<ol>
+<li>什么是聚类分析</li>
+<li>聚类分析应用</li>
+<li>对聚类算法的要求</li>
+<li>对聚类的典型要求</li>
+<li>聚类分析中的数据类型</li>
+<li>区间标度变量</li>
+<li>如何计算对象间的相异度</li>
+<li>二元变量</li>
+<li>标称变量</li>
+<li>序数型变量</li>
+<li>比例标度型变量</li>
+<li>混合类型的数据</li>
+<li>主要的聚类方法</li>
+<li>划分方法</li>
+<li>K-平均值方法</li>
+<li>K中心点方法</li>
+<li>PAM (围绕中心点的划分)</li>
+<li>CLARA (大数据集上的簇集应用)</li>
+<li>层次簇集方法</li>
+<li>AGNES (凝聚的层次聚类)</li>
+<li>DIANA (分裂的层次聚类)</li>
+<li>BIRCH (1996)</li>
+<li>聚集特征</li>
+<li>CF树</li>
+<li>CURE (Clustering Using REpresentatives )</li>
+<li>数据划分和簇集</li>
+<li>簇集分类数据: ROCK</li>
+<li>CHAMELEON</li>
+<li>基于密度的簇集方法</li>
+<li>DBSCAN: 基于高密度连接区域 的密度聚类方法</li>
+<li>OPTICS: 通过对象排序识别簇集结构</li>
+<li>DENCLUE: 基于密度函数的簇集</li>
+<li>影响函数</li>
+<li>密度吸引点</li>
+<li>基于网格的方法</li>
+<li>STING: 统计信息网络</li>
+<li>WaveCluster (1998)</li>
+<li>CLIQUE (Clustering In QUEst)</li>
+<li>基于模型的方法</li>
+<li>COBWEB 簇集模型</li>
+<li>其他基于统计的聚集方法</li>
+<li>自组织特征映射 (SOMs)</li>
+<li>什么是孤立点</li>
+<li>基于统计的孤立点查询</li>
+<li>基于距离的孤立点查询</li>
+<li>基于偏离的孤立点预测</li>
+</ol>
+<h1>C9	复杂数据类型的挖掘</h1>
+<ol>
+<li>结构化数据的概化</li>
+<li>空间和多媒体数据概化中的聚集和近似计算</li>
+<li>对象标识符和类/子类层次的概化</li>
+<li>类复合层次的概化</li>
+<li>对象立方体的构造与挖掘</li>
+<li>用分治法对规划数据库进行基于概化的挖掘</li>
+<li>多维分析</li>
+<li>多维概化</li>
+<li>空间数据立方体构造和空间 OLAP</li>
+<li>空间数据立方体中的维和度量</li>
+<li>空间合并</li>
+<li>空间数据立方体的计算方法</li>
+<li>空间关联分析</li>
+<li>空间分类和空间趋势分析</li>
+<li>多媒体数据的相似性搜索</li>
+<li>基于图象特征标识的相似检索方法</li>
+<li>多媒体数据的多维分析</li>
+<li>多媒体数据库的分类和预测分析</li>
+<li>多媒体数据中的关联规则挖掘</li>
+<li>难题</li>
+<li>时序数据和序列数据的挖掘</li>
+<li>趋势分析</li>
+<li>计算趋势的方法</li>
+<li>时序分析中的相似搜索</li>
+<li>序列模式挖掘</li>
+<li>周期分析</li>
+<li>文本数据库和信息检索</li>
+<li>文本检索的基本度量</li>
+<li>基于关键字和相似性的检索</li>
+<li>潜在语义标引</li>
+<li>其他文本检索标引技术</li>
+<li>基于关键字的关联分析</li>
+<li>文档分类分析</li>
+<li>复杂数据类型的挖掘</li>
+<li>Web挖掘</li>
+<li>HITS (Hyperlink-Induced Topic Search)算法</li>
+</ol>
+<h1>C10	数据挖掘的应用与发展趋势</h1>
+<ol>
+<li>数据挖掘的应用</li>
+<li>如何选择一个数据挖掘系统</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Jon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/06/21/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">http://example.com/2021/06/21/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/unoptimised/">unoptimised</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘</a></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/08/02/post/%E6%9D%82%E9%A1%B9/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="Hexo博客搭建"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">Hexo博客搭建</div></div></a></div><div><a href="/2021/08/06/post/%E6%9D%82%E9%A1%B9/%E9%9F%B3%E9%A2%91%E6%97%A0%E6%8D%9F%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2-&-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%B0%81%E9%9D%A2/" title="音频无损格式转换 & 批量添加封面"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-06</div><div class="title">音频无损格式转换 & 批量添加封面</div></div></a></div><div><a href="/2021/07/17/post/%E8%80%83%E7%A0%94/%E9%AB%98%E6%95%B0%E9%A2%98%E5%9E%8B/" title="高数题型"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-17</div><div class="title">高数题型</div></div></a></div><div><a href="/2021/06/19/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/javaee%E7%9B%AE%E5%BD%95/" title="Java EE 重点目录"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-19</div><div class="title">Java EE 重点目录</div></div></a></div><div><a href="/2021/06/24/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-24</div><div class="title">密码学</div></div></a></div><div><a href="/2021/06/15/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" title="网络安全"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-15</div><div class="title">网络安全</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jon</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C1	引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C2-1	数据仓库与OLAP技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C2-2	数据仓库和数据挖掘的OLAP技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C2-3	数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C3-1	数据预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C3-2	数据预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C4	数据挖掘原语，语言和系统结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C5-1	关联规则挖掘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C5-2	概念描述：特征化与比较</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C6-1	分类和预测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C6-2	挖掘大型数据库中的关联规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C7	关联规则挖掘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C8	聚类分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C9	复杂数据类型的挖掘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C10	数据挖掘的应用与发展趋势</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title">No title</a><time datetime="2021-11-15T02:12:53.526Z" title="Created 2021-11-15 10:12:53">2021-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"/></a><div class="content"><a class="title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件">mac 软件</a><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MacOS 小工具"/></a><div class="content"><a class="title" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具">MacOS 小工具</a><time datetime="2021-11-01T09:04:01.000Z" title="Created 2021-11-01 17:04:01">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自建 RSS 源"/></a><div class="content"><a class="title" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源">自建 RSS 源</a><time datetime="2021-10-31T02:41:55.000Z" title="Created 2021-10-31 10:41:55">2021-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"/></a><div class="content"><a class="title" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><time datetime="2021-10-17T08:55:29.000Z" title="Created 2021-10-17 16:55:29">2021-10-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Jon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

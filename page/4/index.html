@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jon</title><meta name="author" content="Jon"><meta name="copyright" content="Jon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Jon">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="Jon">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:author" content="Jon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Jon',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-11-15 10:27:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jon</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Jon</h1><div id="site_social_icons"><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/18/post/%E8%80%83%E7%A0%94/%E6%91%98%E6%8A%84/" title="摘抄">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="摘抄"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/18/post/%E8%80%83%E7%A0%94/%E6%91%98%E6%8A%84/" title="摘抄">摘抄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-18T02:32:26.000Z" title="Created 2021-08-18 10:32:26">2021-08-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/%E8%8B%B1%E8%AF%AD/">英语</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/English/">English</a></span></div><div class="content">It shows how racism is a failure that needs to be addressed systematically and not just as an individual character flaw.
+When some of your dreams start coming true, it doesn’t make any of the bigger questions in life any easier.
+Most people drank the beer; a few not-so-subtly slugged from their own bottles of baijiu, a grain alcohol that dates back to the Ming Dynasty and burns like regret incarnate.
+A shouting match erupted outside, and two men circled each other like prizefighters, scanning ea ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/16/post/%E9%9F%B3%E4%B9%90/Apple-Music-Library-%E5%A4%A7%E6%B8%85%E6%89%AB/" title="Apple Music Library 大清扫">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Apple Music Library 大清扫"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/16/post/%E9%9F%B3%E4%B9%90/Apple-Music-Library-%E5%A4%A7%E6%B8%85%E6%89%AB/" title="Apple Music Library 大清扫">Apple Music Library 大清扫</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-16T07:04:16.000Z" title="Created 2021-08-16 15:04:16">2021-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">缘起
+尽管 Apple Music 极简的设计在音乐流媒体服务领域确实打遍天下无敌手，但我主力使用 Apple Music 也快四五年了，一直到今天却还感到水土不服。很大程度上就是因为 Apple Music 匪夷所思的「资源库」设计。
+在手机上的 Apple Music 里，所有最近添加的音乐都会默认以专辑视图的形式展示在资源库的首页。不管你添加的是一首单曲，还是一张专辑，都会在这里展示出它的封面。
+
+久而久之，这种设计让我养成了更喜欢一张专辑一张专辑完整的听的体验。这时候我开始遇到几张自己特别喜欢的专辑，这些专辑不仅整体概念很强，封面设计也很漂亮。于是我有了第一个需求
+
+需求一：我需要一个专门用来存放整体概念很强，封面设计漂亮的专辑的歌单。
+
+这个歌单建好之后，我又遇到资源库的另一个问题：专辑和单曲分不开。目前单曲只能在我 shuffle 整个资源库的时候才会随机到。但是这个时候其他专辑的歌也全都在里面，明明在专辑里面很有设计感的 intro 和 outro 在随机播放的时候只会感到尴尬。于是现在有了另一个需求
+
+需求二：我需要两个歌单来把专辑和单曲分开
+
+Solution I
+受 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/13/post/%E8%80%83%E7%A0%94/%E6%94%BF%E6%B2%BB/" title="政治">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="政治"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/13/post/%E8%80%83%E7%A0%94/%E6%94%BF%E6%B2%BB/" title="政治">政治</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-13T13:30:22.000Z" title="Created 2021-08-13 21:30:22">2021-08-13</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%94%BF%E6%B2%BB/">政治</a></span></div><div class="content">马克思主义基本原理概论
+C1 马克思主义是关于无产阶级和人类解放的科学
+⌘1 马克思主义的创立和发展
+⎇1 马克思主义和马克思主义基本原理
+⎇2 马克思主义的创立
+1⃣️ ‼️马克思主义产生的社会根源、阶级基础和思想渊源
+
+资本主义经济的发展为马克思主义的产生提供了经济、社会历史条件
+无产阶级在反抗资产阶级的斗争中逐步走向自觉，对科学理论的指导提出了强烈的需求（马克思主义产生的阶级基础和实践基础）
+马克思、恩格斯的革命实践和对人类文明成果的继承与创新（主观条件）
+
+2⃣️ ‼️《共产党宣言》的发表标志着马克思主义的公开问世
+⎇3 马克思主义的发展
+1⃣️ 列宁对马克思主义的丰富和发展
+2⃣️ 中国共产党对马克思主义的丰富和发展
+⌘2 马克思主义的鲜明特征和当代价值
+⎇1 马克思主义的鲜明特征
+1⃣️ 科学性
+2⃣️ 革命性
+3⃣️ 实践性
+4⃣️ ‼️人民性
+5⃣️ ‼️发展开放性
+⎇2 马克思主义的当代价值
+1⃣️ 观察当代世界变化的认识工具
+2⃣️ 指引当代中国发展的行动指南
+3⃣️ 引领人类社会进步的科学真理
+C2 世界的物质性及发展规律
+⌘1 世界多样性与统一性
+⎇1 物质及其 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/12/post/%E8%80%83%E7%A0%94/World-List/" title="World List">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="World List"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/12/post/%E8%80%83%E7%A0%94/World-List/" title="World List">World List</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-12T15:22:11.000Z" title="Created 2021-08-12 23:22:11">2021-08-12</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%8B%B1%E8%AF%AD/">英语</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/unpotimised/">unpotimised</a></span></div><div class="content">effort
+n. 努力
+efficient
+v. 有效的
+institute
+v. 建立 n.学院，研究院（具体）
+institution
+n.制度（抽象），机构
+comment
+n./v. 评论
+commend
+v. 赞扬
+command
+n./v. 命令
+procession
+n. 游行
+possession
+n. 财产
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/06/post/%E6%9D%82%E9%A1%B9/%E9%9F%B3%E9%A2%91%E6%97%A0%E6%8D%9F%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2-&amp;-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%B0%81%E9%9D%A2/" title="音频无损格式转换 &amp; 批量添加封面">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="音频无损格式转换 &amp; 批量添加封面"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/06/post/%E6%9D%82%E9%A1%B9/%E9%9F%B3%E9%A2%91%E6%97%A0%E6%8D%9F%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2-&amp;-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%B0%81%E9%9D%A2/" title="音频无损格式转换 &amp; 批量添加封面">音频无损格式转换 &amp; 批量添加封面</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-06T14:41:06.000Z" title="Created 2021-08-06 22:41:06">2021-08-06</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/unoptimised/">unoptimised</a></span></div><div class="content">工具准备
+decoder
+https://github.com/Presburger/qmc-decoder
+这个工具用来将qmcflac格式的音频文件解码为flac格式，可以通过以下命令快速安装：
+12345678# install cmake brew install cmakegit clone https://github.com/Presburger/qmc-decoder.gitcd qmc-decodergit submodule update --initmkdir build &amp;&amp; cd buildcmake ..make
+命令执行结束后，在个人目录下会出现 qmc-decoder 文件夹。将文件夹中的 decoder 移动到 qmcflac 文件所在目录，同时另外保存，方便以后使用。
+XLD
+https://sourceforge.net/projects/xld/
+这个工具用来将 flac 等 iTunes 不支持的格式的音频文件转换为其支持的 Apple Lossless 即 m4a 格式。
+
+kid3
+https://sourceforge.n ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/06/post/%E9%9F%B3%E4%B9%90/%E4%B8%93%E8%BE%91/orvillepeck-pony/" title="Orville Peck - Pony">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Orville Peck - Pony"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/06/post/%E9%9F%B3%E4%B9%90/%E4%B8%93%E8%BE%91/orvillepeck-pony/" title="Orville Peck - Pony">Orville Peck - Pony</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-06T14:12:04.000Z" title="Created 2021-08-06 22:12:04">2021-08-06</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E9%9F%B3%E4%B9%90/%E4%B8%93%E8%BE%91/">专辑</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/unoptimised/">unoptimised</a></span></div><div class="content">  
+“Members of the LGBT+ community that wouldn’t necessarily be at a country show. Mega-fans in Orville Peck masks. Couples in their 80s who are huge country fans. Drag queens. Five-year-olds!” Orville Peck is describing his average audience for Apple Music. “Maybe there are a million reasons for these people to be a room together,” he says. “But it’s lovely that I’m one of the reasons for them to be together.” It’s unsurprising that the fringe-masked, pseudonymous Toronto-based cowboy crooner’s ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/02/post/%E6%9D%82%E9%A1%B9/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="Hexo博客搭建">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo博客搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/02/post/%E6%9D%82%E9%A1%B9/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="Hexo博客搭建">Hexo博客搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-08-02T15:47:59.000Z" title="Created 2021-08-02 23:47:59">2021-08-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/unoptimised/">unoptimised</a></span></div><div class="content">本地部分
+
+1.在官网下载安装 node.js
+https://nodejs.org/en/
+
+下载左边长期支持版。
+安装好之后得到一个 node.js 本身，一个 npm 包管理器
+
+安装好之后可以在终端运行 npm -v 检查一下.
+Nom 在国内速度较差，安装 cnpm 使用国内源。
+安装需要 sudo 权限
+1npm install -g cnpm --registry=https://registry.npm.taobao.org
+2.安装 hexo 框架
+1cnpm install -g hexo-cli
+3.创建本地博客
+在用户个人路径下创建博客路径，在路径下初始化 hexo（在新电脑上还原以前的博客时，先新建空的路径初始化好 hexo 之后，再把原来的文件复制进来）
+1hexo init
+4.初始化
+123hexo s			//启动hexo clean	//清理hexo g			//生成
+远端部署
+1.GitHub 新建repo
+theodoremathers.github.io
+一定要和自己用户名相同，一定要小写
+2.安装插件
+在本地路径进行安装
+1cnpm inst ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/07/17/post/%E8%80%83%E7%A0%94/%E9%AB%98%E6%95%B0%E9%A2%98%E5%9E%8B/" title="高数题型">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高数题型"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/07/17/post/%E8%80%83%E7%A0%94/%E9%AB%98%E6%95%B0%E9%A2%98%E5%9E%8B/" title="高数题型">高数题型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-07-17T03:04:07.000Z" title="Created 2021-07-17 11:04:07">2021-07-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/%E6%95%B0%E5%AD%A6/">数学</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/unoptimised/">unoptimised</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></span></div><div class="content">  
+C1	函数、极限、连续
+一、概念问题📂
+1⃣️ 判断是否有界
+
+若f(x)f(x)f(x)为闭区间[a,b][a,b][a,b]上的连续函数，则f(x)f(x)f(x)在[a,b][a,b][a,b]上必定有界
+若f(x)f(x)f(x)​为开区间(a,b)(a,b)(a,b)​上的连续函数，且$\lim_{x\rightarrow a^{+}} f\left( x\right)  ​与​与​与\lim_{x\rightarrow b^{-}} f\left( x\right) ​都存在，则​ 都存在，则​都存在，则f(x)​在​在​在(a,b)$​上必定有界
+
+一般的题目只要找到函数的间断点求极限即可
+二、n项之和/之积的极限📂
+1⃣️、n项之和
+
+分子分母齐次，相差1次，利用极限的定义求解，如：lim⁡n→∞(1n2+12+2n2+22+...+nn2+n2)\lim_{n\rightarrow\infty}(\frac1{n^2+1^2}+\frac2{n^2+2^2}+...+\frac n{n^2+n^2})
+n→∞lim​(n2+121​+n2+222​+...+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/06/24/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/06/24/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">密码学</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-06-24T06:31:38.000Z" title="Created 2021-06-24 14:31:38">2021-06-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E7%A7%91/">本科</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E7%A7%91/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/">重点目录</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/unoptimised/">unoptimised</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content">密码系统
+对称密码体制的优缺点
+非对称密码体制的优缺点
+古典密码
+分组密码
+分组密码的模型框图
+扩散（Diffusion）与混乱（Confusion）
+Feistel 密码结构
+ECB 模式
+CBC 模式
+OFB 模式
+CFB 模式
+序列密码
+设计思想
+同步序列密码 SSC
+
+同步性
+无错误传播
+抗主动攻击性
+自同步序列密码SSSC
+
+自同步性
+错误传播有限性
+抗主动攻击性
+明文统计扩散性
+序列随机性能的评价
+序列密码安全性的重要指标
+非对称密码
+HASH 函数
+分类
+性质
+数字签名
+分类
+身份识别与实体认证
+“零知识”协议
+对称密钥环境
+非对称密钥环境下
+Schnorr 身份识别方案
+Okamoto 身份识别方案
+密钥分配
+长期密钥和会话密钥
+密钥分配和密钥协商
+无条件安全的密钥预分配
+Diffie-Hellman 密钥协商
+加密密钥交换
+PKI 简介
+信任模型
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/06/21/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" title="数据挖掘">     <img class="post_bg" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据挖掘"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/06/21/post/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" title="数据挖掘">数据挖掘</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-06-21T09:49:39.000Z" title="Created 2021-06-21 17:49:39">2021-06-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E7%A7%91/">本科</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E7%A7%91/%E9%87%8D%E7%82%B9%E7%9B%AE%E5%BD%95/">重点目录</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/unoptimised/">unoptimised</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘</a></span></div><div class="content">C1	引言
+
+数据挖掘研究的促发因素
+数据库技术的演化
+数据坟墓
+数据挖掘定义
+知识发现过程的步骤
+数据挖掘广义定义
+数据挖掘系统的主要成分
+关系数据库
+数据仓库特点（定义）
+数据仓库步骤
+数据仓库和数据集市
+OLAP和OLTP
+事务数据库
+高级数据库和高级数据库应用
+对象关系数据库
+空间数据库
+时间数据库和时间序列数据库
+文本数据库
+多媒体数据库
+异构数据库和遗产数据库
+万维网WWW
+数据挖掘任务
+数据挖掘功能
+模式有趣的条件
+数据挖掘系统的分类
+分类方法
+数据挖掘的主要问题
+
+C2-1	数据仓库与OLAP技术
+
+数据仓库的定义
+数据仓库的组成
+加载管理器
+仓库管理器
+查询管理器
+数据仓库的数据模型
+概念模型
+逻辑模型
+物理模型
+维
+维的层次
+维成员
+度量
+粒度
+星型结构
+雪花型结构
+星型雪花型结构
+数据库与数据仓库的区别
+数据库的局限性
+ETL的概念
+ETL的功能
+提高数据质量
+搭建数据仓库
+EAI数据集成
+ETL的目标
+ETL的流程
+数据抽取
+数据转换
+数据清洁
+数据装载
+ETL的组成
+ETL的相关技术
+DTS
+ETL的实现方法
+ETL的工具
+ETL的应用
+UCIS-ETL在统一 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jon</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2021/11/15/post/By/%7B%25%20gallery%20%25%7D/" title="No title">No title</a><time datetime="2021-11-15T02:12:53.526Z" title="Created 2021-11-15 10:12:53">2021-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"/></a><div class="content"><a class="title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E4%B8%80%E9%94%AE%E8%BF%98%E5%8E%9F/" title="mac 软件">mac 软件</a><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MacOS 小工具"/></a><div class="content"><a class="title" href="/2021/11/01/post/%E6%9D%82%E9%A1%B9/MacOS-%E5%B0%8F%E5%B7%A5%E5%85%B7/" title="MacOS 小工具">MacOS 小工具</a><time datetime="2021-11-01T09:04:01.000Z" title="Created 2021-11-01 17:04:01">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自建 RSS 源"/></a><div class="content"><a class="title" href="/2021/10/31/post/%E6%9D%82%E9%A1%B9/%E8%87%AA%E5%BB%BA%20RSS%20%E6%BA%90/" title="自建 RSS 源">自建 RSS 源</a><time datetime="2021-10-31T02:41:55.000Z" title="Created 2021-10-31 10:41:55">2021-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"/></a><div class="content"><a class="title" href="/2021/10/17/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><time datetime="2021-10-17T08:55:29.000Z" title="Created 2021-10-17 16:55:29">2021-10-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            <a class="card-more-btn" href="/categories/" title="More">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">19</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/"><span class="card-category-list-name">Events</span><span class="card-category-list-count">16</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/BUUCTF/"><span class="card-category-list-name">BUUCTF</span><span class="card-category-list-count">15</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/BUUCTF/Basic/"><span class="card-category-list-name">Basic</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/BUUCTF/Misc/"><span class="card-category-list-name">Misc</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/"><span class="card-category-list-name">羊城杯</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/Misc/"><span class="card-category-list-name">Misc</span><span class="card-category-list-count">1</span></a></li></ul></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">3</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/unoptimised/" style="font-size: 1.45em; color: rgb(72, 182, 99)">unoptimised</a><a href="/tags/Dev/" style="font-size: 1.3em; color: rgb(86, 162, 196)">Dev</a><a href="/tags/RSS/" style="font-size: 1.15em; color: rgb(144, 96, 195)">RSS</a><a href="/tags/English/" style="font-size: 1.15em; color: rgb(99, 182, 83)">English</a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.15em; color: rgb(4, 91, 162)">政治</a><a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 1.15em; color: rgb(96, 105, 114)">微积分</a><a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 1.15em; color: rgb(165, 66, 0)">英语</a><a href="/tags/unpotimised/" style="font-size: 1.15em; color: rgb(10, 159, 119)">unpotimised</a><a href="/tags/CTF/" style="font-size: 1.45em; color: rgb(80, 154, 134)">CTF</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.3em; color: rgb(174, 7, 141)">数据库</a><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(192, 24, 108)">软件安全</a><a href="/tags/C/" style="font-size: 1.3em; color: rgb(158, 94, 10)">C</a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.38em; color: rgb(16, 163, 140)">密码学</a><a href="/tags/Java-EE/" style="font-size: 1.22em; color: rgb(47, 131, 69)">Java EE</a><a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 1.15em; color: rgb(190, 181, 40)">数据挖掘</a><a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(178, 105, 148)">网络安全</a><a href="/tags/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(170, 44, 185)">信息系统安全</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.15em; color: rgb(126, 30, 107)">计算机网络</a><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 1.15em; color: rgb(161, 19, 102)">软件工程</a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.22em; color: rgb(157, 76, 70)">编译原理</a><a href="/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81/" style="font-size: 1.15em; color: rgb(137, 144, 77)">信息论与编码</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">October 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">September 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">August 2021</span><span class="card-archive-list-count">21</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">July 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">June 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">March 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">January 2021</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">56</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-11-15T02:27:44.829Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Jon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
