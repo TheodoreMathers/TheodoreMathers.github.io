@@ -1,0 +1,435 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>软件安全 | Jon</title><meta name="keywords" content="unoptimised,软件安全"><meta name="author" content="Jon"><meta name="copyright" content="Jon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Soft Security C1	软件安全概述 safety vs security safety：自然的，屋里的，相对具体的 security：社会的，人为的，相对抽象的 信息系统面临的三大典型软件安全威胁 软件缺陷与漏洞（正常软件） 恶意软件：实现恶意目的 非法破解，知识产权被侵害（正常软件） C2 	&#x3D;&#x3D;PE文件&#x3D;&#x3D; PE文件格式总体结构  DOS MZ header 定位PE头文件开始位置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件安全">
+<meta property="og:url" content="https://theodoremathers.github.io/2020/12/28/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="Jon">
+<meta property="og:description" content="Soft Security C1	软件安全概述 safety vs security safety：自然的，屋里的，相对具体的 security：社会的，人为的，相对抽象的 信息系统面临的三大典型软件安全威胁 软件缺陷与漏洞（正常软件） 恶意软件：实现恶意目的 非法破解，知识产权被侵害（正常软件） C2 	&#x3D;&#x3D;PE文件&#x3D;&#x3D; PE文件格式总体结构  DOS MZ header 定位PE头文件开始位置">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg">
+<meta property="article:published_time" content="2020-12-28T13:32:02.000Z">
+<meta property="article:modified_time" content="2021-08-04T06:24:09.000Z">
+<meta property="article:author" content="Jon">
+<meta property="article:tag" content="unoptimised">
+<meta property="article:tag" content="软件安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://theodoremathers.github.io/2020/12/28/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件安全',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2021-08-04 14:24:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jon</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软件安全</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-12-28T13:32:02.000Z" title="Created 2020-12-28 21:32:02">2020-12-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-04T06:24:09.000Z" title="Updated 2021-08-04 14:24:09">2021-08-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91/">本科</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/">期末重点</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件安全"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Soft Security</h1>
+<h2 id="C1软件安全概述">C1	软件安全概述</h2>
+<h3 id="safety-vs-security">safety vs security</h3>
+<p>safety：自然的，屋里的，相对具体的</p>
+<p>security：社会的，人为的，相对抽象的</p>
+<h3 id="信息系统面临的三大典型软件安全威胁">信息系统面临的三大典型软件安全威胁</h3>
+<p>软件缺陷与漏洞（正常软件）</p>
+<p>恶意软件：实现恶意目的</p>
+<p>非法破解，知识产权被侵害（正常软件）</p>
+<h2 id="C2-PE文件">C2 	==PE文件==</h2>
+<h3 id="PE文件格式总体结构">PE文件格式总体结构</h3>
+<ul>
+<li>DOS MZ header<br>
+定位PE头文件开始位置（最后四个字节0，也可以用于PE文件合法性检测</li>
+<li>DOS stub<br>
+DOS下运行该程序时，将提示用户：“This Program cannot be run in DOS mode”</li>
+<li>PE header
+<ul>
+<li>字串&quot;PE\0\0&quot;(Signature)(50\45\0\0)</li>
+<li>映像文件头(File Header)包含PE文件物理分布信息，节数、后续可选文件头大小、机器类型等<br>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm4h3bh7ihj30ed02pt99.jpg" alt="Screen Shot 2020-12-29 at 09.33.14"></li>
+<li>可选文件头(Optional Header)定义了PE文件的很多关键信息，内存镜像加载地址(ImageBase)、程序入口点、节在文件和内存中的对齐粒度、本程序在内存中的镜像大小，文件头大小等</li>
+</ul>
+</li>
+<li>Section table</li>
+</ul>
+<h3 id="为何需要导出序号表">为何需要导出序号表</h3>
+<p>导出函数名字和导出地址表中的地址不是一一对应关系</p>
+<p>一个函数实现可能有多个名字</p>
+<p>某些函数没有名字，仅通过序号导出</p>
+<h2 id="C3软件缺陷与漏洞机理概述">C3	软件缺陷与漏洞机理概述</h2>
+<h3 id="什么是软件漏洞">什么是软件漏洞</h3>
+<p>漏洞是存在于评估对象中的、在一定环境条件下可能违反安全功能要求的弱点</p>
+<p>漏洞是存在于信息系统，系统安全过程，内部控制或实现过程中的、可被威胁源攻击或触发的弱点</p>
+<p>漏洞是能够被一个或多个威胁利用的资产或控制中的弱点</p>
+<p>漏洞是贯穿软件生命周期各环节的。在时间维度上，漏洞都会经历产生、发现、公开、消亡等过程</p>
+<h3 id="为什么会出现软件漏洞">为什么会出现软件漏洞</h3>
+<p>计算机系统结构决定了漏洞的必然性————</p>
+<p>软件趋向大型化，第三方扩展增多</p>
+<p>新技术新应用产生之初即缺乏安全性考虑</p>
+<p>软件使用场景更具威胁</p>
+<p>对软件安全开发重视不够，软件开发者缺乏安全知识</p>
+<h3 id="软件漏洞利用对系统的威胁">软件漏洞利用对系统的威胁</h3>
+<p>非法获取访问权限</p>
+<p>权限提升</p>
+<p>拒绝服务</p>
+<p>恶意软件植入</p>
+<p>数据丢失或泄露</p>
+<h3 id="漏洞的分类">漏洞的分类</h3>
+<p>通常可以从漏洞利用的成因、利用的位置、和对系统造成的直接威胁进行分类</p>
+<ul>
+<li>基于漏洞成因的分类
+<ul>
+<li>内存破坏类</li>
+<li>逻辑错误类</li>
+<li>输入验证类</li>
+<li>设计错误类</li>
+<li>配置错误类</li>
+</ul>
+</li>
+<li>基于漏洞利用位置分类
+<ul>
+<li>本地漏洞————</li>
+<li>远程漏洞————</li>
+</ul>
+</li>
+<li>基于威胁类型的分类
+<ul>
+<li>获取控制————</li>
+<li>获取信息————</li>
+<li>拒绝服务————</li>
+</ul>
+</li>
+</ul>
+<h2 id="C4缓冲区溢出漏洞">C4	缓冲区溢出漏洞</h2>
+<h3 id="堆栈溢出示意">堆栈溢出示意</h3>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm3wuti1v7j30hv04qaaj.jpg" alt="Screen Shot 2020-12-28 at 21.53.14"></p>
+<p>当写入内存的数据大于我们分配的长度，导致邻近的内存数据被覆盖，如果精心准备覆盖到程序返回指针的数据，程序的进程可能就会被攻击者所控制</p>
+<h3 id="缓冲区溢出的危害">缓冲区溢出的危害</h3>
+<p>成功地利用缓冲区溢出漏洞可以修改内存中变量的值，甚至可以劫持进程，执行恶意代码，最终获得主机的控制权</p>
+<p>要透彻的理解这种攻击方式，需要计算机体系架构方面的基础知识，理解CPU、寄存器、内存是怎样协同工作而让程序流畅执行的</p>
+<h3 id="栈溢出的利用">栈溢出的利用</h3>
+<p>修改邻接变量</p>
+<p>修改函数返回地址</p>
+<p>S.E.H.结构覆盖</p>
+<h3 id="修改邻接变量">修改邻接变量</h3>
+<p>由于函数的局部变量是依次存储在栈帧上的，因此如果这些局部变量中有数组之类的缓冲区，并且程序中存在数组越界缺陷，那么数组越界后就有可能破坏栈中相邻变量的值，甚至破坏栈帧中所保存的EBP、返回地址等重要数据</p>
+<h3 id="修改函数返回地址">修改函数返回地址</h3>
+<p>通过覆盖修改返回地址，使其指向shellcode地址，更改程序流程，从而转至shellcode处执行</p>
+<h3 id="堆的结构">堆的结构</h3>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm3xb7pmjlj30kj067go5.jpg" alt="Screen Shot 2020-12-28 at 22.09.05"></p>
+<p>空闲堆块比战友堆块多出了两个4字节的指针，这两个指针用于连接系统中的其他空闲块</p>
+<p>空表<br>
+堆表区中有一个128项的数组，称做空表索引（每项包含两个指针，标示一条空表）<br>
+空闲堆块的大小=索引项 x 8（字节）</p>
+<h3 id="堆溢出的利用">堆溢出的利用</h3>
+<p>当精心构造的数据淹没前向指针和后向指针时，如果在flink放入4字节的任意恶意数据内容，在blink放入目标地址，当执行以上操作时，导致目标地址的内容被修改为4字节的恶意数据<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm3xi9j9o7j30eq09240v.jpg" alt="Screen Shot 2020-12-28 at 22.15.52"></p>
+<h2 id="C4Web基础知识">C4	Web基础知识</h2>
+<h3 id="目前普遍使用的Web三成架构">目前普遍使用的Web三成架构</h3>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm3xvblnduj30gx08276f.jpg" alt="Screen Shot 2020-12-28 at 22.26.40"></p>
+<h3 id="典型的Web安全漏洞">典型的Web安全漏洞</h3>
+<p>Web应用安全漏洞是Web应用程序在需求、设计、实现、配置、维护和使用等过程中，有意或无意产生的缺陷，这些缺陷一旦被攻击者所利用，就会造成对网站或用户的安全损害，从而影响构建于Web应用之上的正常服务的运行，危害网站或用户的安全属性</p>
+<h2 id="C5软件漏洞利用和发现">C5	软件漏洞利用和发现</h2>
+<h3 id="漏洞利用简介">漏洞利用简介</h3>
+<p>Exploit<br>
+可以根据目标环境构造一段用于实现攻击的二进制串（Payload）</p>
+<p>Payload<br>
+被注入到目标进程触发漏洞获得执行权限的二进制串<br>
+代表攻击者攻击意图的代码（Shellcode）</p>
+<h3 id="恶意代码的定义与发作趋势">恶意代码的定义与发作趋势</h3>
+<p>设计目的是用来实现恶意功能的代码或程序</p>
+<p>正常的软件也会引发安全问题，但绝大多数情况并非作者有意</p>
+<h3 id="恶意代码的分类">恶意代码的分类</h3>
+<p>计算机病毒、蠕虫<br>
+计算机病毒，一组能够进行自我传播，需要用户干预来出发执行的破坏性程序或代码<br>
+蠕虫，一组能够进行自我传播、不需要用户干预即可触发执行的破坏性程序或代码</p>
+<p>木马、后门<br>
+木马，看起来具有正常功能，但实际上隐藏着很多用户不希望功能的程序。通常由控制端和被控制端组成<br>
+后门，是的攻击者可以对系统进行非授权访问的一类程序</p>
+<p>Rootkit<br>
+通过修改现有的操作系统软件，使攻击者获得访问权并隐藏在计算机中的程序</p>
+<p>僵尸（bot）</p>
+<p>流氓软件、间谍软件</p>
+<p>广告软件、Exploit、黑客工具</p>
+<h2 id="C9PE病毒">C9	PE病毒</h2>
+<h3 id="重定位">重定位</h3>
+<p>病毒代码目标寄生位置不固定</p>
+<p>修正实际地址与预期地址等差异</p>
+<p>根据HOST特征逐一硬编码</p>
+<p>病毒代码运行过程中自我重定位</p>
+<h3 id="API函数自获取">API函数自获取</h3>
+<p>需要使用的API函数</p>
+<p>但无需引入函数节支持</p>
+<h3 id="目标程序遍历搜索">目标程序遍历搜索</h3>
+<p>全盘查找，或者部分盘符查找</p>
+<h4 id="感染模块">感染模块</h4>
+<p>病毒代码插入位置选择与写入</p>
+<p>控制权返回机制</p>
+<h2 id="C9宏病毒">C9	宏病毒</h2>
+<h3 id="文件感染的关键">文件感染的关键</h3>
+<p>病毒代码能够得到运行<br>
+选择合适的位置放入病毒代码<br>
+将控制权交给病毒代码<br>
+——修改程序入口点<br>
+——在原目标代码执行过程中运行病毒代码</p>
+<p>程序的正常功能不能被破坏<br>
+感染时，记录原始“程序控制点位置”<br>
+病毒代码执行完毕之后，返回控制权<br>
+避免重复感染：感染标记</p>
+<h3 id="宏病毒如何获得控制权">宏病毒如何获得控制权</h3>
+<p>利用如下自动执行宏，将病毒代码写在如下的宏中，由于这些宏会自动执行，因此获取控制权<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm4j8g6gdgj30g00423yz.jpg" alt="Screen Shot 2020-12-29 at 10.47.35"></p>
+<h3 id="宏病毒的感染">宏病毒的感染</h3>
+<p>内建宏：位于文档中，对该文档有效</p>
+<p>全局宏：位于Office模版中，为所有文档共同所用</p>
+<p>传播路线：<br>
+单机：-&gt;单个Office文档-&gt;Office文档模版-&gt;多个Office文档</p>
+<p>网络：-&gt;电子邮件居多</p>
+<h2 id="C9网络蠕虫">C9	网络蠕虫</h2>
+<h3 id="传播的阶段">传播的阶段</h3>
+<p>慢启动期</p>
+<p>快速传播期</p>
+<p>慢结束期</p>
+<p>被清理期</p>
+<h3 id="基本功能">基本功能</h3>
+<p>信息收集：主要完成对本地和目标节点主机的信息汇集</p>
+<p>扫描探测：发现易感染主机群体</p>
+<p>攻击渗透：利用已发现的服务漏洞实施攻击（控制权获取）</p>
+<p>自我推进：完成对目标节点的感染（蠕虫主体程序传输）</p>
+<h2 id="C9木马">C9	木马</h2>
+<h3 id="通信方式">通信方式</h3>
+<p>传输通道构件信息<br>
+IP地址、端口等信息、第三方网站地址</p>
+<p>建立通信连接的方式<br>
+正向连接<br>
+反向连接</p>
+<h3 id="正向连接">正向连接</h3>
+<p>控制端主动连接被控端</p>
+<h3 id="反向连接">反向连接</h3>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gm4jtyxyhoj30g0042gm1.jpg" alt="Screen Shot 2020-12-29 at 11.07.40"></p>
+<h3 id="木马结构">木马结构</h3>
+<p>木马配置程序</p>
+<p>控制端程序</p>
+<p>被控制端程序</p>
+<h2 id="C10恶意软件防范技术">C10	恶意软件防范技术</h2>
+<h3 id="恶意代码的检测">恶意代码的检测</h3>
+<p>将检测对象与恶意代码特征（检测标准）进行对比分析，定位病毒程序或代码，或检测恶意行为</p>
+<h3 id="检测对象">检测对象</h3>
+<p>引导扇区</p>
+<p>文件系统中可能带毒的文件</p>
+<p>内存空间</p>
+<p>主板BIOS等</p>
+<h3 id="特征值检测技术">特征值检测技术</h3>
+<p>病毒特征值是反病毒软件鉴定特定计算机病毒的一种标志。通常是从病毒样本中提取的一段或多段字符串或者二进制串<br>
+获取样本-&gt;提取样本特征=&gt;更新病毒库-&gt;查杀病毒</p>
+<h3 id="特征值的提取选择">特征值的提取选择</h3>
+<p>特定字串</p>
+<p>感染标记</p>
+<p>从病毒代码特定的地方开始取出的连续的、大于64且不含空格的（ASCII值为32的字节串）</p>
+<h3 id="提取方法">提取方法</h3>
+<p>人工提取<br>
+反病毒工程师对病毒样本进行分析后，人工确定病毒特征</p>
+<p>自动提取<br>
+通过软件系统自动提取特定范围内特定长度具有一定特征的数据<br>
+处理不力则可能被别有用心者利用，形成误杀</p>
+<h3 id="对抗">对抗</h3>
+<p>手工修改自身特征<br>
+首先，利用反病毒软件定位<br>
+然后，进行针对性修改</p>
+<p>自动修改自身特征<br>
+加密、多态、变形等</p>
+<h3 id="校验和检测技术">校验和检测技术</h3>
+<p>在文件使用/系统启动过程中，检查检测对象的实际校验和预期是否一致，因而可以发现文件/引导区是否感染</p>
+<h3 id="预期">预期</h3>
+<p>正常文件内容和正常引导扇区数据</p>
+<h3 id="校验和检测对象">校验和检测对象</h3>
+<p>文件头部</p>
+<p>文件属性</p>
+<p>文件内容</p>
+<p>系统数据等</p>
+<h3 id="启发式扫描技术">启发式扫描技术</h3>
+<p>恶意代码检测经验和知识等软件实现</p>
+<h3 id="可疑的程序代码指令序列">可疑的程序代码指令序列</h3>
+<p>格式化磁盘类操作</p>
+<p>搜索和定位各种可执行程序的操作</p>
+<p>发现驻留内存的操作</p>
+<p>发现非常用的或未公开的系统功能调用的操作、子程序调用中只执行入栈操作、远距离跳转指令等</p>
+<p>敏感系统行为</p>
+<p>敏感API函数调用功能</p>
+<h3 id="启发式扫描步骤">启发式扫描步骤</h3>
+<p>定义通用可疑特征</p>
+<p>对上述功能操作将被按照安全和可疑的等级进行排序，授以不同的权值</p>
+<p>鉴别特征，如果程序的权值总和超过一个事先定义的阈值，则认为“发现病毒”</p>
+<h3 id="博弈">博弈</h3>
+<p>直接对抗<br>
+disable启发式机制<br>
+disable反病毒软件</p>
+<p>绕行<br>
+哪些是启发式检测的特征项？<br>
+是否有其他替代实现方式</p>
+<h3 id="主动防御技术">主动防御技术</h3>
+<p>行为监控技术</p>
+<p>动态监视所运行程序调用各种编程接口等动作，自动分析程序动作之间的逻辑关系，自动判定程序行为的合法性</p>
+<p>监控应用程序的敏感行为，并向用户发出提示，供用户选择</p>
+<h2 id="C11恶意软件捕获方法">C11	恶意软件捕获方法</h2>
+<h3 id="蜜罐">蜜罐</h3>
+<p>通常指未采取安全防范措施、并且将模拟的程序漏洞主动暴露在网络中的计算机</p>
+<p>特点<br>
+与一般的计算机不同，其内部运行着多种多样特殊用途的“自我暴露程序”和行为记录程序<br>
+引诱恶意软件在蜜罐内更加充分的运行，并记录下其行为</p>
+<p>工作模式<br>
+被动型蜜罐<br>
+主动型蜜罐</p>
+<p>主动型蜜罐实现思路<br>
+S1:通过爬虫等主动获取潜在的恶意软件<br>
+S2:将其在蜜罐主机内打开、运行，并模拟进行交互<br>
+S3:根据运行特征，发现和收集漏洞利用信息和恶意软件样本</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Jon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://theodoremathers.github.io/2020/12/28/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/">https://theodoremathers.github.io/2020/12/28/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/unoptimised/">unoptimised</a><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/">软件安全</a></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/10/11/post/%E6%9C%AC%E7%A7%91/%E9%A1%B9%E7%9B%AE/DLL-%E6%9C%A8%E9%A9%AC%E6%A8%A1%E6%8B%9F%E7%A8%8B%E5%BA%8F/" title="DLL 木马模拟程序"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-11</div><div class="title">DLL 木马模拟程序</div></div></a></div><div><a href="/2021/08/24/post/CTF/CTF-%E5%B7%A5%E5%85%B7/" title="CTF 工具"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-24</div><div class="title">CTF 工具</div></div></a></div><div><a href="/2021/08/12/post/%E8%80%83%E7%A0%94/World-List/" title="World List"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-12</div><div class="title">World List</div></div></a></div><div><a href="/2021/08/18/post/%E8%80%83%E7%A0%94/%E6%91%98%E6%8A%84/" title="摘抄"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-18</div><div class="title">摘抄</div></div></a></div><div><a href="/2021/07/17/post/%E8%80%83%E7%A0%94/%E9%AB%98%E6%95%B0%E9%A2%98%E5%9E%8B/" title="高数题型"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-17</div><div class="title">高数题型</div></div></a></div><div><a href="/2021/08/06/post/%E9%9F%B3%E4%B9%90/%E4%B8%93%E8%BE%91/orvillepeck-pony/" title="Orville Peck - Pony"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gt88jn92lyj31430khk05.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-06</div><div class="title">Orville Peck - Pony</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jon</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/theodoremathers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Soft Security</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C1%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0"><span class="toc-text">C1	软件安全概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#safety-vs-security"><span class="toc-text">safety vs security</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%9D%A2%E4%B8%B4%E7%9A%84%E4%B8%89%E5%A4%A7%E5%85%B8%E5%9E%8B%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81"><span class="toc-text">信息系统面临的三大典型软件安全威胁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C2-PE%E6%96%87%E4%BB%B6"><span class="toc-text">C2 	&#x3D;&#x3D;PE文件&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E6%80%BB%E4%BD%93%E7%BB%93%E6%9E%84"><span class="toc-text">PE文件格式总体结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81%E5%AF%BC%E5%87%BA%E5%BA%8F%E5%8F%B7%E8%A1%A8"><span class="toc-text">为何需要导出序号表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C3%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E4%B8%8E%E6%BC%8F%E6%B4%9E%E6%9C%BA%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-text">C3	软件缺陷与漏洞机理概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6%E6%BC%8F%E6%B4%9E"><span class="toc-text">什么是软件漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%BD%AF%E4%BB%B6%E6%BC%8F%E6%B4%9E"><span class="toc-text">为什么会出现软件漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%AF%B9%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%A8%81%E8%83%81"><span class="toc-text">软件漏洞利用对系统的威胁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">漏洞的分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C4%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E6%BC%8F%E6%B4%9E"><span class="toc-text">C4	缓冲区溢出漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%A0%88%E6%BA%A2%E5%87%BA%E7%A4%BA%E6%84%8F"><span class="toc-text">堆栈溢出示意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="toc-text">缓冲区溢出的危害</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E6%BA%A2%E5%87%BA%E7%9A%84%E5%88%A9%E7%94%A8"><span class="toc-text">栈溢出的利用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%82%BB%E6%8E%A5%E5%8F%98%E9%87%8F"><span class="toc-text">修改邻接变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80"><span class="toc-text">修改函数返回地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">堆的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%BA%A2%E5%87%BA%E7%9A%84%E5%88%A9%E7%94%A8"><span class="toc-text">堆溢出的利用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C4Web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">C4	Web基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%89%8D%E6%99%AE%E9%81%8D%E4%BD%BF%E7%94%A8%E7%9A%84Web%E4%B8%89%E6%88%90%E6%9E%B6%E6%9E%84"><span class="toc-text">目前普遍使用的Web三成架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84Web%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E"><span class="toc-text">典型的Web安全漏洞</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C5%E8%BD%AF%E4%BB%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%92%8C%E5%8F%91%E7%8E%B0"><span class="toc-text">C5	软件漏洞利用和发现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E7%AE%80%E4%BB%8B"><span class="toc-text">漏洞利用简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%8F%91%E4%BD%9C%E8%B6%8B%E5%8A%BF"><span class="toc-text">恶意代码的定义与发作趋势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">恶意代码的分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C9PE%E7%97%85%E6%AF%92"><span class="toc-text">C9	PE病毒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E4%BD%8D"><span class="toc-text">重定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API%E5%87%BD%E6%95%B0%E8%87%AA%E8%8E%B7%E5%8F%96"><span class="toc-text">API函数自获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F%E9%81%8D%E5%8E%86%E6%90%9C%E7%B4%A2"><span class="toc-text">目标程序遍历搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%9F%E6%9F%93%E6%A8%A1%E5%9D%97"><span class="toc-text">感染模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C9%E5%AE%8F%E7%97%85%E6%AF%92"><span class="toc-text">C9	宏病毒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%84%9F%E6%9F%93%E7%9A%84%E5%85%B3%E9%94%AE"><span class="toc-text">文件感染的关键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F%E7%97%85%E6%AF%92%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E6%8E%A7%E5%88%B6%E6%9D%83"><span class="toc-text">宏病毒如何获得控制权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F%E7%97%85%E6%AF%92%E7%9A%84%E6%84%9F%E6%9F%93"><span class="toc-text">宏病毒的感染</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C9%E7%BD%91%E7%BB%9C%E8%A0%95%E8%99%AB"><span class="toc-text">C9	网络蠕虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E7%9A%84%E9%98%B6%E6%AE%B5"><span class="toc-text">传播的阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">基本功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C9%E6%9C%A8%E9%A9%AC"><span class="toc-text">C9	木马</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-text">通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E8%BF%9E%E6%8E%A5"><span class="toc-text">正向连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E8%BF%9E%E6%8E%A5"><span class="toc-text">反向连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%A8%E9%A9%AC%E7%BB%93%E6%9E%84"><span class="toc-text">木马结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C10%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E9%98%B2%E8%8C%83%E6%8A%80%E6%9C%AF"><span class="toc-text">C10	恶意软件防范技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="toc-text">恶意代码的检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%AF%B9%E8%B1%A1"><span class="toc-text">检测对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF"><span class="toc-text">特征值检测技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E7%9A%84%E6%8F%90%E5%8F%96%E9%80%89%E6%8B%A9"><span class="toc-text">特征值的提取选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95"><span class="toc-text">提取方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%8A%97"><span class="toc-text">对抗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E5%92%8C%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF"><span class="toc-text">校验和检测技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E6%9C%9F"><span class="toc-text">预期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E5%92%8C%E6%A3%80%E6%B5%8B%E5%AF%B9%E8%B1%A1"><span class="toc-text">校验和检测对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E6%89%AB%E6%8F%8F%E6%8A%80%E6%9C%AF"><span class="toc-text">启发式扫描技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%96%91%E7%9A%84%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%E6%8C%87%E4%BB%A4%E5%BA%8F%E5%88%97"><span class="toc-text">可疑的程序代码指令序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E6%89%AB%E6%8F%8F%E6%AD%A5%E9%AA%A4"><span class="toc-text">启发式扫描步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88"><span class="toc-text">博弈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E9%98%B2%E5%BE%A1%E6%8A%80%E6%9C%AF"><span class="toc-text">主动防御技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C11%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%8D%95%E8%8E%B7%E6%96%B9%E6%B3%95"><span class="toc-text">C11	恶意软件捕获方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9C%9C%E7%BD%90"><span class="toc-text">蜜罐</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/06/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/Safari%20can't%20open%20the%20page%20localhost%204000%20because%20Safari%20can't%20find%20the%20server%20localhost/" title="Safari can't access localhost"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz3uqr3kl4j31bt0u0wfn.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Safari can't access localhost"/></a><div class="content"><a class="title" href="/2022/02/06/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/Safari%20can't%20open%20the%20page%20localhost%204000%20because%20Safari%20can't%20find%20the%20server%20localhost/" title="Safari can't access localhost">Safari can't access localhost</a><time datetime="2022-02-06T08:11:03.946Z" title="Created 2022-02-06 16:11:03">2022-02-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/21/post/%E6%9D%82%E9%A1%B9/%E7%99%BE%E7%A7%91/%E7%BE%8E%E5%9B%BD%E6%97%B6%E9%97%B4/" title="美国时间"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz3w6qwz4kj30m80endgz.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美国时间"/></a><div class="content"><a class="title" href="/2022/01/21/post/%E6%9D%82%E9%A1%B9/%E7%99%BE%E7%A7%91/%E7%BE%8E%E5%9B%BD%E6%97%B6%E9%97%B4/" title="美国时间">美国时间</a><time datetime="2022-01-21T09:16:48.718Z" title="Created 2022-01-21 17:16:48">2022-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/29/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"/></a><div class="content"><a class="title" href="/2021/11/29/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><time datetime="2021-11-29T06:27:23.000Z" title="Created 2021-11-29 14:27:23">2021-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/28/post/%E8%80%83%E7%A0%94/847--%E7%BD%91%E7%BB%9C/" title="847--网络"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--网络"/></a><div class="content"><a class="title" href="/2021/11/28/post/%E8%80%83%E7%A0%94/847--%E7%BD%91%E7%BB%9C/" title="847--网络">847--网络</a><time datetime="2021-11-28T08:07:47.000Z" title="Created 2021-11-28 16:07:47">2021-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/mac-%E8%BD%AF%E4%BB%B6/" title="mac 软件"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqcquykkmj31q20u0q6y.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"/></a><div class="content"><a class="title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/mac-%E8%BD%AF%E4%BB%B6/" title="mac 软件">mac 软件</a><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BUUCTF 2021 Misc | Jon</title><meta name="keywords" content="CTF,unoptimised"><meta name="author" content="Jon"><meta name="copyright" content="Jon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="BUUCTF 杂项练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BUUCTF 2021 Misc">
+<meta property="og:url" content="https://theodoremathers.github.io/2021/08/25/post/CTF/Events/BUUCTF/BUUCTF-Misc/index.html">
+<meta property="og:site_name" content="Jon">
+<meta property="og:description" content="BUUCTF 杂项练习题">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg">
+<meta property="article:published_time" content="2021-08-25T09:42:41.000Z">
+<meta property="article:modified_time" content="2022-02-06T08:39:25.217Z">
+<meta property="article:author" content="Jon">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="unoptimised">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://theodoremathers.github.io/2021/08/25/post/CTF/Events/BUUCTF/BUUCTF-Misc/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'BUUCTF 2021 Misc',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-02-06 16:39:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jon</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">BUUCTF 2021 Misc</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-25T09:42:41.000Z" title="Created 2021-08-25 17:42:41">2021-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-02-06T08:39:25.217Z" title="Updated 2022-02-06 16:39:25">2022-02-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/Events/">Events</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/Events/BUUCTF/">BUUCTF</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="BUUCTF 2021 Misc"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>N种方法解决</h1>
+<h2 id="题面">题面</h2>
+<p>下载得到一个打不开的 exe 文件</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt66t1ampj60al03ot8k02.jpg" alt="下载"></p>
+<h2 id="操作">操作</h2>
+<p>把文件拖进二进制查看器，根据文件头的信息可以知道是一个图片的 base64 密文。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gtt69enzvzj60fh04xgmg02.jpg" alt="查看源码"></p>
+<p>去掉开头的提示信息，base64 解码得到一张图片</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt6aihl4gj60ih06ldg102.jpg" alt="解码"></p>
+<p>扫描二维码得到flag</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt6bbkrf3j60n00j3di002.jpg" alt="flag"></p>
+<h1>乌镇峰会种图</h1>
+<h2 id="题面-2">题面</h2>
+<p>下载得到一张图片</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqb9uu415j30ih09smy0.jpg" alt="下载得到图片"></p>
+<h2 id="操作-2">操作</h2>
+<p>肉眼看不出来什么信息，拖到二进制查看器看看。</p>
+<p>文件最后发现flag。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqb9vsy24j30r80ik78w.jpg" alt="flag"></p>
+<h1>LSB</h1>
+<h2 id="题面-3">题面</h2>
+<p>下载得到 png 图片：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqba6xrthj30ih08wq3o.jpg" alt="flag11.png"></p>
+<h2 id="分析">分析</h2>
+<p>LSB 全拼为 Least Significant Bit，是最低有效位的意思。LSB 图片隐写是基于 LSB 算法的一种图片隐写术，是一种常见的信息隐藏方法。LSB 隐写很实用，算法简单，能存储的信息量也大，也是 CTF 比赛中的常客。</p>
+<p>LSB 隐写就是修改 RGB 颜色分量的最低二进制位也就是最低有效位（LSB），而人类的眼睛不会注意到这前后的变化，每个像数可以携带3比特的信息。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqba6gzmoj30kn087gm1.jpg" alt="最低有效位"></p>
+<p>一般的 LSB 题都通过 Stegsolve 寻找隐藏信息。</p>
+<h2 id="操作-3">操作</h2>
+<p>将图片在 Stegsolve 中打开，观察不同通道的显示效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqba5isqmj307u0aogmp.jpg" alt="红色通道"></p>
+<p>发现当红，绿，蓝通道为0时，图片最上方好像有隐藏信息。</p>
+<p>选择数据提取，将红绿蓝都勾上0：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqba7c4ndj30ko09t758.jpg" alt="数据提取"></p>
+<p>保存后发现是一个二维码，扫描得到flag：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqba5572ej30n00gxgot.jpg" alt="flag"></p>
+<h1>文件中的秘密</h1>
+<h2 id="题面-4">题面</h2>
+<p>小明经常喜欢在文件中藏一些秘密。时间久了便忘记了，你能帮小明找到该文件中的秘密吗？</p>
+<p>下载得到一张图片</p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbayor37j30jg0xv0xe.jpg" alt="图片" style="zoom: 50%;" />
+<h2 id="操作-4">操作</h2>
+<p>在 Windows 下查看文件属性，flag 就蹲在 comments 里面</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbaz15o9j30a30e5q3z.jpg" alt="flag"></p>
+<p>mac 的 comments 是空白……</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbazfcznj307r04e3yf.jpg" alt="耍流氓！！"></p>
+<h1>wireshark</h1>
+<h2 id="题面-5">题面</h2>
+<p>黑客通过wireshark抓到管理员登陆网站的一段流量包（管理员的密码即是答案) 。</p>
+<p>下载得到一个 pcap 文件，使用 Wireshark 打开。</p>
+<h2 id="分析-2">分析</h2>
+<p>登陆密码应该是用 post 请求发送到服务器的，在过滤器筛选 post 请求的包。</p>
+<h2 id="操作-5">操作</h2>
+<p>筛完之后居然就只剩一条了：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbbqpy9kj30ls05u74y.jpg" alt="http.request.method==POST"></p>
+<p>在下面随便翻翻就找到了flag：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbbue5m8j30ls05u753.jpg" alt="flag"></p>
+<h1>rar</h1>
+<h2 id="题面-6">题面</h2>
+<p>这个是一个rar文件，里面好像隐藏着什么秘密，但是压缩包被加密了，毫无保留的告诉你，rar的密码是4位纯数字。</p>
+<p>下载得到一个 rar 文件。</p>
+<h2 id="操作-6">操作</h2>
+<p>使用 cRARk 爆破</p>
+<p>解压得到 flag.txt</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbc8jvo1j308a02v0sm.jpg" alt="flag"></p>
+<h1>zip伪加密</h1>
+<h2 id="题面-7">题面</h2>
+<p>下载得zip</p>
+<h2 id="分析-3">分析</h2>
+<p>题目标题给出提示“zip 伪加密”</p>
+<p>zip 伪加密原理：</p>
+<p>在二进制查看器中打开 zip 文件，可以看到文件的三个结构体</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbcspxp1j31800u0dnm.jpg" alt="二进制查看器打开zip文件"></p>
+<p>ZIP-FILE-RECORD：压缩源文件数据区<br>
+ZIP-DIR-ENTRY：压缩源文件目录区<br>
+ZIP-END-LOCATOR：压缩源文件目录结束标志</p>
+<h3 id="ZIP-FILE-RECORD：压缩源文件数据区">ZIP-FILE-RECORD：压缩源文件数据区</h3>
+<p>这是用来存放压缩包中文件数据的地方。这块数据的开头是 50 4B 03 04 这四个字节，叫做文件头标记；往后的两个字节 14 00 标识了解压文件所需 pkware 版本；再往后的两个字节叫做全局方式位标记（这里可以判断这个压缩包有无加密；00 00 是无加密，目前的 09 00 是有加密)</p>
+<h3 id="ZIP-DIR-ENTRY：压缩源文件目录区">ZIP-DIR-ENTRY：压缩源文件目录区</h3>
+<p>这里是用来存放压缩包中文件目录的地方，压缩包中的所有文件名都可以在这找到。这个结构体的前四个字节 50 4B 01 02 叫做目录中文件文件头标记；1F 00 是压缩使用的 pkware 版本； 14 00是解压文件所需 pkware 版本；09 00 是全局方式位标记（这里是判断有无加密的第二个地点，00 00 为没有加密，09 00 为有加密)</p>
+<p>将以上文件结构中的 09 00 全部改成 00 00 就可以无需密码解压zip</p>
+<h2 id="操作-7">操作</h2>
+<p>将压缩源文件数据区和压缩源文件目录区中的「全局方式位标记」由 09 00 改为 00 00 就可以无密码解压zip，解压得到flag</p>
+<h1>被嗅探的流量</h1>
+<h2 id="题面-8">题面</h2>
+<p>某黑客潜入到某公司内网通过嗅探抓取了一段文件传输的数据，该数据也被该公司截获，你能帮该公司分析他抓取的到底是什么文件的数据吗？</p>
+<p>下载得到一个 pcapng 流量包文件</p>
+<h2 id="分析-4">分析</h2>
+<p>要找到传输的文件数据，在流量包中查找 post 请求</p>
+<h2 id="操作-8">操作</h2>
+<p>用 Wireshark 打开流量包，筛选 http.request.method==POST</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbdbe0z4j31nc09c76n.jpg" alt="筛选"></p>
+<p>得到两条记录，其中一条记录包含了一个图片文件，点开看看</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbdcei4ej31380moq8g.jpg" alt=""></p>
+<p>发现 flag</p>
+<h1>ningen</h1>
+<h2 id="题面-9">题面</h2>
+<p>人类的科学日益发展，对自然的研究依然无法满足，传闻日本科学家秋明重组了基因序列，造出了名为ningen的超自然生物。某天特工小明偶然截获了日本与俄罗斯的秘密通信，文件就是一张ningen的特写，小明通过社工，知道了秋明特别讨厌中国的六位银行密码，喜欢四位数。你能找出黑暗科学家秋明的秘密么？</p>
+<p>下载得到一张 png 图片</p>
+<h2 id="分析-5">分析</h2>
+<p>肉眼上看不出来有什么信息，初步猜测是图片内藏了一个4位密码的压缩包</p>
+<h2 id="操作-9">操作</h2>
+<p>用二进制查看器打开图片</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbdybjafj31380mogqt.jpg" alt="二进制查看"></p>
+<p>果然里面藏了一个 txt 文件，用 foremost 分离文件</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbdyrvu2j30v005yjry.jpg" alt="foremost"></p>
+<p>得到一个 zip</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbdz7c64j30y60tygne.jpg" alt="zip"></p>
+<p>根据提示，爆破四位密码</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbdxvdrmj310y05i3z6.jpg" alt="爆破"></p>
+<p>解压得到flag</p>
+<h1>镜子里面的世界</h1>
+<h2 id="题面-10">题面</h2>
+<p>下载得到一张 png 图片</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbeep4crj30m80goaaz.jpg" alt="steg"></p>
+<h2 id="分析-6">分析</h2>
+<p>根据图片提示，可能是图片里有隐藏文件或者是 LSB 隐写</p>
+<h2 id="操作-10">操作</h2>
+<p>用 foremost 查看图片内容，没有发现隐藏文件</p>
+<p>用 stegsolve 检查是否有 LSB 隐写</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbef4e51j313y0qk0to.jpg" alt="stegsolve"></p>
+<p>发现在颜色通道为 0 时，图片左上角有隐藏内容。将颜色通道设置为 0，提取数据</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqbefo3cxj30x20lmjwq.jpg" alt="flag"></p>
+<p>发现 flag</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Jon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://theodoremathers.github.io/2021/08/25/post/CTF/Events/BUUCTF/BUUCTF-Misc/">https://theodoremathers.github.io/2021/08/25/post/CTF/Events/BUUCTF/BUUCTF-Misc/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/unoptimised/">unoptimised</a></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/08/24/post/CTF/CTF-%E5%B7%A5%E5%85%B7/" title="CTF 工具"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-24</div><div class="title">CTF 工具</div></div></a></div><div><a href="/2021/08/23/post/CTF/Events/BUUCTF/BUUCTF-Basic/" title="BUUCTF 2021 Basic"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-23</div><div class="title">BUUCTF 2021 Basic</div></div></a></div><div><a href="/2021/09/25/post/CTF/Events/%E7%BE%8A%E5%9F%8E%E6%9D%AF/%E7%BE%8A%E5%9F%8E%E6%9D%AF-Misc/" title="羊城杯 2021 Misc"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-25</div><div class="title">羊城杯 2021 Misc</div></div></a></div><div><a href="/2021/08/12/post/%E8%80%83%E7%A0%94/World-List/" title="World List"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-12</div><div class="title">World List</div></div></a></div><div><a href="/2021/08/18/post/%E8%80%83%E7%A0%94/%E6%91%98%E6%8A%84/" title="摘抄"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-18</div><div class="title">摘抄</div></div></a></div><div><a href="/2021/07/17/post/%E8%80%83%E7%A0%94/%E9%AB%98%E6%95%B0%E9%A2%98%E5%9E%8B/" title="高数题型"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-17</div><div class="title">高数题型</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jon</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/theodoremathers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">N种方法解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">乌镇峰会种图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-2"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-2"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">LSB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-3"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-3"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">文件中的秘密</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-4"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-4"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">wireshark</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-5"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90-2"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-5"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">rar</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-6"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-6"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">zip伪加密</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-7"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90-3"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ZIP-FILE-RECORD%EF%BC%9A%E5%8E%8B%E7%BC%A9%E6%BA%90%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E5%8C%BA"><span class="toc-text">ZIP-FILE-RECORD：压缩源文件数据区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZIP-DIR-ENTRY%EF%BC%9A%E5%8E%8B%E7%BC%A9%E6%BA%90%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%8C%BA"><span class="toc-text">ZIP-DIR-ENTRY：压缩源文件目录区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-7"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">被嗅探的流量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-8"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90-4"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-8"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">ningen</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-9"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90-5"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-9"><span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">镜子里面的世界</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2-10"><span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90-6"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-10"><span class="toc-text">操作</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/06/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/Safari%20can't%20open%20the%20page%20localhost%204000%20because%20Safari%20can't%20find%20the%20server%20localhost/" title="Safari can't access localhost"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz3uqr3kl4j31bt0u0wfn.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Safari can't access localhost"/></a><div class="content"><a class="title" href="/2022/02/06/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/Safari%20can't%20open%20the%20page%20localhost%204000%20because%20Safari%20can't%20find%20the%20server%20localhost/" title="Safari can't access localhost">Safari can't access localhost</a><time datetime="2022-02-06T08:11:03.946Z" title="Created 2022-02-06 16:11:03">2022-02-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/21/post/%E6%9D%82%E9%A1%B9/%E7%99%BE%E7%A7%91/%E7%BE%8E%E5%9B%BD%E6%97%B6%E9%97%B4/" title="美国时间"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz3w6qwz4kj30m80endgz.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美国时间"/></a><div class="content"><a class="title" href="/2022/01/21/post/%E6%9D%82%E9%A1%B9/%E7%99%BE%E7%A7%91/%E7%BE%8E%E5%9B%BD%E6%97%B6%E9%97%B4/" title="美国时间">美国时间</a><time datetime="2022-01-21T09:16:48.718Z" title="Created 2022-01-21 17:16:48">2022-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/29/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"/></a><div class="content"><a class="title" href="/2021/11/29/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><time datetime="2021-11-29T06:27:23.000Z" title="Created 2021-11-29 14:27:23">2021-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/28/post/%E8%80%83%E7%A0%94/847--%E7%BD%91%E7%BB%9C/" title="847--网络"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--网络"/></a><div class="content"><a class="title" href="/2021/11/28/post/%E8%80%83%E7%A0%94/847--%E7%BD%91%E7%BB%9C/" title="847--网络">847--网络</a><time datetime="2021-11-28T08:07:47.000Z" title="Created 2021-11-28 16:07:47">2021-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/mac-%E8%BD%AF%E4%BB%B6/" title="mac 软件"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqcquykkmj31q20u0q6y.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"/></a><div class="content"><a class="title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/mac-%E8%BD%AF%E4%BB%B6/" title="mac 软件">mac 软件</a><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>信息系统安全 | Jon</title><meta name="keywords" content="unoptimised,信息系统安全"><meta name="author" content="Jon"><meta name="copyright" content="Jon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C1 信息系统安全绪论 1.3 认识信息系统安全 信息系统的安全性 指信息系统具有的降低安全攻击风险的特性，它的作用主要体现在以下两个方面：  降低安全攻击获得成功的可能性 降低成功的攻击造成的损害  信息系统安全问题的特点  涉及硬件安全和软件安全 以主机系统安全为核心 需要兼顾网络安全  1.4 信息安全经典要素 机密性（Confidentiality） 实现机密性  访问控制：阻止未获授权的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息系统安全">
+<meta property="og:url" content="https://theodoremathers.github.io/2021/06/18/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="Jon">
+<meta property="og:description" content="C1 信息系统安全绪论 1.3 认识信息系统安全 信息系统的安全性 指信息系统具有的降低安全攻击风险的特性，它的作用主要体现在以下两个方面：  降低安全攻击获得成功的可能性 降低成功的攻击造成的损害  信息系统安全问题的特点  涉及硬件安全和软件安全 以主机系统安全为核心 需要兼顾网络安全  1.4 信息安全经典要素 机密性（Confidentiality） 实现机密性  访问控制：阻止未获授权的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg">
+<meta property="article:published_time" content="2021-06-18T07:29:59.000Z">
+<meta property="article:modified_time" content="2021-08-04T06:22:24.000Z">
+<meta property="article:author" content="Jon">
+<meta property="article:tag" content="unoptimised">
+<meta property="article:tag" content="信息系统安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://theodoremathers.github.io/2021/06/18/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '信息系统安全',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2021-08-04 14:22:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jon</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">信息系统安全</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-06-18T07:29:59.000Z" title="Created 2021-06-18 15:29:59">2021-06-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-04T06:22:24.000Z" title="Updated 2021-08-04 14:22:24">2021-08-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91/">本科</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/">期末重点</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="信息系统安全"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>C1 信息系统安全绪论</h1>
+<h2 id="1-3-认识信息系统安全">1.3 认识信息系统安全</h2>
+<h3 id="信息系统的安全性">信息系统的安全性</h3>
+<p>指信息系统具有的降低安全攻击风险的特性，它的作用主要体现在以下两个方面：</p>
+<ul>
+<li>降低安全攻击获得成功的可能性</li>
+<li>降低成功的攻击造成的损害</li>
+</ul>
+<h3 id="信息系统安全问题的特点">信息系统安全问题的特点</h3>
+<ul>
+<li>涉及硬件安全和软件安全</li>
+<li>以主机系统安全为核心</li>
+<li>需要兼顾网络安全</li>
+</ul>
+<h2 id="1-4-信息安全经典要素">1.4 信息安全经典要素</h2>
+<p>机密性（Confidentiality）</p>
+<h3 id="实现机密性">实现机密性</h3>
+<ul>
+<li>访问控制：阻止未获授权的实体获取受保护的信息</li>
+<li>加密保护：阻止未获授权的实体理解受保护的信息</li>
+</ul>
+<p>完整性（Integrity）</p>
+<p>可用性（Availability）</p>
+<h2 id="1-5-安全系统基本概念">1.5 安全系统基本概念</h2>
+<h3 id="安全策略">安全策略</h3>
+<p>为达到一组安全目标而设计的规则的集合</p>
+<h3 id="安全模型">安全模型</h3>
+<p>用更加形式化的或数学化的术语对安全策略的重新表述</p>
+<h3 id="安全机制">安全机制</h3>
+<p>实现安全功能的逻辑或算法</p>
+<h3 id="安全机制设计原则">安全机制设计原则</h3>
+<ul>
+<li>经济性原则（Economy of Mechanism）<br>
+简单短小</li>
+<li>默认拒绝原则（Fail- Safe Defaults）</li>
+<li>完全仲裁原则（Complete Mediation）<br>
+安全机制实施的授权检查必须能覆盖系统中的任何一个访问操作</li>
+<li>开放设计原则（Open Design）<br>
+不把安全机制的设计方案视作机密</li>
+<li>特权分立原则（Separation of Privilege）<br>
+对权力进行细分，把一项特权细分成多项特权，分配给多个主体，奸笑每个特权拥有者的权利，从而增强系统的安全性</li>
+<li>最小特权原则（Least Privilege）<br>
+系统中的每个程序和每个用户应该只拥有完成工作所需特权的最小集合</li>
+<li>最少公共机制原则（Least Common Mechanism）<br>
+把由多个用户共用和被全体用户依赖的机制数量减到最少</li>
+<li>心理可接受原则（Psychological Acceptability）<br>
+把安全机制的人机界面设计得好用</li>
+</ul>
+<h1>C2 信息安全经典模型</h1>
+<h2 id="访问控制分类">访问控制分类</h2>
+<h3 id="DAC">DAC</h3>
+<p>自主访问控制：作为客体的拥有者的用户个体可以通过设计访问控制属性来准许或拒绝对该客体的访问</p>
+<p>如果普通用户个体能够参与一个安全策略的策略逻辑的定义或安全属性的分配，则这样的安全策略称为自主安全策略</p>
+<h3 id="MAC">MAC</h3>
+<p>强制访问控制：只有系统才能控制对客体的访问，而用户个体不能改变这种控制</p>
+<p>如果一个安全策略的策略逻辑的定义与安全属性的分配只能由系统安全策略<strong>管理员</strong>进行控制，则该安全策略称为强制安全策略</p>
+<h2 id="2-1-贝拉模型（BLP）">2.1 贝拉模型（BLP）</h2>
+<p>以保护机密性为立足点的强制访问控制模型。</p>
+<h3 id="ss-特性">ss-特性</h3>
+<p>机密等级高的才能看机密文件</p>
+<h3 id="特性">*-特性</h3>
+<p>不上读，不下写</p>
+<h3 id="ds-特性">ds-特性</h3>
+<h2 id="2-2-毕巴模型（Biba）">2.2 毕巴模型（Biba）</h2>
+<p>完整性访问控制模型，强制访问控制模型。用完整性级别来对完整性进行量化描述，完整性级别是有序的，可进行比较。</p>
+<h3 id="毕巴环模型">毕巴环模型</h3>
+<p>不管完整性级别如何，任何主体都可以读任何客体。</p>
+<h2 id="2-4-域类实施模型（TE-DTE）">2.4 域类实施模型（TE &amp; DTE）</h2>
+<h3 id="类型实施模型（TE）">类型实施模型（TE）</h3>
+<p>通过对主体和客体进行分组，定义域和类型的概念，以此为基础实施强制访问控制。主体被分为不同的域，客体被分为不同的类型。TE模型面向二维表DDT的访问控制模型。</p>
+<h3 id="域类实施模型（DTE）">域类实施模型（DTE）</h3>
+<p>域类实施模型是类型实施模型的改进版本，他立足于解决TE模型在实际应用中遇到的问题。他设计了一个高级语言形式的安全策略描述语言，用于描述安全属性和访问控制配置，该语言称为DTE语言。与TE相比，有以下两个特点（1）用高级语言描述访问控制策略（2）<strong>采用隐含方式表示文件安全属性</strong></p>
+<h2 id="2-5-莫科尔数模型（Merkle-Tree）">2.5 莫科尔数模型（Merkle Tree）</h2>
+<p>哈希树是用于计算数据项的哈希值的二叉树，树中每个节点都对应一个 值，其中，每个叶节点与一个数据项相对应，每个非叶节点与该节点的两个子节点的值的连接结果的哈希值相对应。</p>
+<h3 id="例题">例题</h3>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm7i9pvv5j30w20oaagq.jpg" alt="Screen Shot 2021-06-18 at 10.23.42"></p>
+<h1>C3 系统安全硬件基础</h1>
+<h2 id="3-2-可信平台基本思想">3.2 可信平台基本思想</h2>
+<h3 id="信任（trust）">信任（trust）</h3>
+<p>对行为符合预期的认同感</p>
+<h3 id="信任根（root-of-trust）">信任根（root of trust）</h3>
+<p>系统关键的基本元素的集合，它拥有描述平台信任相关特性的最小功能集，他是默认的信任基础</p>
+<h3 id="度量核心信任根（CRTM）">度量核心信任根（CRTM）</h3>
+<p>执行完整性度量任务的最基础的指令集合，它是信任根的组成部分</p>
+<h3 id="信任传递（transitive-trust）">信任传递（transitive trust）</h3>
+<p>信任根可为执行的功能建立信任的过程，一个功能的信任建立后，可用于为下一个可执行的功能建立信任</p>
+<h3 id="信任链（chain-of-trust）">信任链（chain of trust）</h3>
+<p>信任根从初始完整性度量起建立的一系列信任组成的序列</p>
+<h3 id="可信平台模块（TPM）">可信平台模块（TPM）</h3>
+<p>由TCG定义的、通常以单芯片形式实现的硬件组件，它拥有独立的处理器、ram、rom和内存，具有独立于宿主系统的状态，通过专用接口与宿主系统交互，它提供的核心功能是存储和报告完整性度量结果。</p>
+<h1>C4 用户身份认证机制</h1>
+<h1>C5 操作系统基础安全机制</h1>
+<h2 id="5-1-基于权限位的访问控制机制">5.1 基于权限位的访问控制机制</h2>
+<h3 id="例题-2">例题</h3>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm83rvmrgj30w20latdz.jpg" alt="Screen Shot 2021-06-18 at 10.44.24"></p>
+<h2 id="5-2-访问控制的进程实施机制">5.2 访问控制的进程实施机制</h2>
+<h3 id="例题-3">例题</h3>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm87r7p0dj30w20smwlq.jpg" alt="Screen Shot 2021-06-18 at 10.48.13"></p>
+<h2 id="5-5-文件系统加密机制">5.5 文件系统加密机制</h2>
+<p>面向单个文件的加密方法可以实现对任意给定的一个文件的加密，面向文件系统的加密方法则可以实现对任意给定的一个文件系统中所有文件的加密</p>
+<h1>C6 操作系统强制安全机制</h1>
+<h2 id="6-1-安全模型关键思想">6.1 安全模型关键思想</h2>
+<h3 id="例题-4">例题</h3>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm8mktpuxj30w20c8gp9.jpg" alt="Screen Shot 2021-06-18 at 11.02.30"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm8vazu8nj30w20byjw3.jpg" alt="Screen Shot 2021-06-18 at 11.10.52"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm8vlmv6hj30w20fedle.jpg" alt="Screen Shot 2021-06-18 at 11.11.10"></p>
+<h2 id="6-2-模型相关判定支撑">6.2 模型相关判定支撑</h2>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm8xb16q0j30dc08wmxx.jpg" alt="Screen Shot 2021-06-18 at 11.12.48"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1grm8xldpy2j30g60aewfi.jpg" alt="Screen Shot 2021-06-18 at 11.13.04"></p>
+<p>auditallow：0—不审计允许的操纵；1—审计允许的操作</p>
+<p>dontaudit：0—审计不允许的操作；1—不审计不允许的操作</p>
+<h1>C7 数据库基础安全机制</h1>
+<h2 id="7-2-关系数据库自主访问授权">7.2 关系数据库自主访问授权</h2>
+<h3 id="否定优先原则">否定优先原则</h3>
+<p>如果一个主体既拥有在某个客体上进行操作的肯定式授权，又拥有在该客体上进行同样操作的否定式授权，那么否定式授权发挥作用，肯定式授权不起作用</p>
+<h3 id="个体优先原则">个体优先原则</h3>
+<p>如果某个小组及其组中的某个用户都拥有同一个客体上的同一种访问类型的授权，并且两者所拥有的授权是冲突的，那么用户拥有的授权发挥 作用，小组拥有的授权不起作用</p>
+<h2 id="7-3-基于视图的访问控制">7.3 基于视图的访问控制</h2>
+<h3 id="基于视图的读控制">基于视图的读控制</h3>
+<p>RDBMS中的视图机制可用于提供基于内容的访问控制支持。视图是能够展示数据库对象实例中的字段和记录的子集的动态窗口，它通过查询操作来确定所要展示的字段和记录的子集。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Jon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://theodoremathers.github.io/2021/06/18/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/">https://theodoremathers.github.io/2021/06/18/post/%E6%9C%AC%E7%A7%91/%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/unoptimised/">unoptimised</a><a class="post-meta__tags" href="/tags/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/">信息系统安全</a></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/008i3skNgy1gwfki3yktgj31hc0u0qap.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/03/24/post/%E6%9C%AC%E7%A7%91/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/" title="信息系统安全"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-24</div><div class="title">信息系统安全</div></div></a></div><div><a href="/2021/08/24/post/CTF/CTF-%E5%B7%A5%E5%85%B7/" title="CTF 工具"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtqnynjq39j60q40eot9002.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-24</div><div class="title">CTF 工具</div></div></a></div><div><a href="/2021/08/12/post/%E8%80%83%E7%A0%94/World-List/" title="World List"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-12</div><div class="title">World List</div></div></a></div><div><a href="/2021/08/18/post/%E8%80%83%E7%A0%94/%E6%91%98%E6%8A%84/" title="摘抄"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-18</div><div class="title">摘抄</div></div></a></div><div><a href="/2021/07/17/post/%E8%80%83%E7%A0%94/%E9%AB%98%E6%95%B0%E9%A2%98%E5%9E%8B/" title="高数题型"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-17</div><div class="title">高数题型</div></div></a></div><div><a href="/2021/08/06/post/%E9%9F%B3%E4%B9%90/%E4%B8%93%E8%BE%91/orvillepeck-pony/" title="Orville Peck - Pony"><img class="cover" src="https://tva1.sinaimg.cn/large/008i3skNgy1gt88jn92lyj31430khk05.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-06</div><div class="title">Orville Peck - Pony</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jon</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/theodoremathers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:theodoremathers@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C1 信息系统安全绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E8%AE%A4%E8%AF%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8"><span class="toc-text">1.3 认识信息系统安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-text">信息系统的安全性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">信息系统安全问题的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%BB%8F%E5%85%B8%E8%A6%81%E7%B4%A0"><span class="toc-text">1.4 信息安全经典要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%AF%86%E6%80%A7"><span class="toc-text">实现机密性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E5%AE%89%E5%85%A8%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">1.5 安全系统基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="toc-text">安全策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B"><span class="toc-text">安全模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-text">安全机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-text">安全机制设计原则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C2 信息安全经典模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%86%E7%B1%BB"><span class="toc-text">访问控制分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DAC"><span class="toc-text">DAC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MAC"><span class="toc-text">MAC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%B4%9D%E6%8B%89%E6%A8%A1%E5%9E%8B%EF%BC%88BLP%EF%BC%89"><span class="toc-text">2.1 贝拉模型（BLP）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ss-%E7%89%B9%E6%80%A7"><span class="toc-text">ss-特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-text">*-特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ds-%E7%89%B9%E6%80%A7"><span class="toc-text">ds-特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%AF%95%E5%B7%B4%E6%A8%A1%E5%9E%8B%EF%BC%88Biba%EF%BC%89"><span class="toc-text">2.2 毕巴模型（Biba）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%95%E5%B7%B4%E7%8E%AF%E6%A8%A1%E5%9E%8B"><span class="toc-text">毕巴环模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%9F%9F%E7%B1%BB%E5%AE%9E%E6%96%BD%E6%A8%A1%E5%9E%8B%EF%BC%88TE-DTE%EF%BC%89"><span class="toc-text">2.4 域类实施模型（TE &amp; DTE）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%AE%9E%E6%96%BD%E6%A8%A1%E5%9E%8B%EF%BC%88TE%EF%BC%89"><span class="toc-text">类型实施模型（TE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E7%B1%BB%E5%AE%9E%E6%96%BD%E6%A8%A1%E5%9E%8B%EF%BC%88DTE%EF%BC%89"><span class="toc-text">域类实施模型（DTE）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%8E%AB%E7%A7%91%E5%B0%94%E6%95%B0%E6%A8%A1%E5%9E%8B%EF%BC%88Merkle-Tree%EF%BC%89"><span class="toc-text">2.5 莫科尔数模型（Merkle Tree）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C3 系统安全硬件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E5%8F%AF%E4%BF%A1%E5%B9%B3%E5%8F%B0%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">3.2 可信平台基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%EF%BC%88trust%EF%BC%89"><span class="toc-text">信任（trust）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%E6%A0%B9%EF%BC%88root-of-trust%EF%BC%89"><span class="toc-text">信任根（root of trust）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%A6%E9%87%8F%E6%A0%B8%E5%BF%83%E4%BF%A1%E4%BB%BB%E6%A0%B9%EF%BC%88CRTM%EF%BC%89"><span class="toc-text">度量核心信任根（CRTM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%E4%BC%A0%E9%80%92%EF%BC%88transitive-trust%EF%BC%89"><span class="toc-text">信任传递（transitive trust）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E4%BB%BB%E9%93%BE%EF%BC%88chain-of-trust%EF%BC%89"><span class="toc-text">信任链（chain of trust）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E5%B9%B3%E5%8F%B0%E6%A8%A1%E5%9D%97%EF%BC%88TPM%EF%BC%89"><span class="toc-text">可信平台模块（TPM）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C4 用户身份认证机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C5 操作系统基础安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E5%9F%BA%E4%BA%8E%E6%9D%83%E9%99%90%E4%BD%8D%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">5.1 基于权限位的访问控制机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-2"><span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%AE%9E%E6%96%BD%E6%9C%BA%E5%88%B6"><span class="toc-text">5.2 访问控制的进程实施机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-3"><span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%9C%BA%E5%88%B6"><span class="toc-text">5.5 文件系统加密机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C6 操作系统强制安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B%E5%85%B3%E9%94%AE%E6%80%9D%E6%83%B3"><span class="toc-text">6.1 安全模型关键思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-4"><span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%88%A4%E5%AE%9A%E6%94%AF%E6%92%91"><span class="toc-text">6.2 模型相关判定支撑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">C7 数据库基础安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%AA%E4%B8%BB%E8%AE%BF%E9%97%AE%E6%8E%88%E6%9D%83"><span class="toc-text">7.2 关系数据库自主访问授权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%A6%E5%AE%9A%E4%BC%98%E5%85%88%E5%8E%9F%E5%88%99"><span class="toc-text">否定优先原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BD%93%E4%BC%98%E5%85%88%E5%8E%9F%E5%88%99"><span class="toc-text">个体优先原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-%E5%9F%BA%E4%BA%8E%E8%A7%86%E5%9B%BE%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="toc-text">7.3 基于视图的访问控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A7%86%E5%9B%BE%E7%9A%84%E8%AF%BB%E6%8E%A7%E5%88%B6"><span class="toc-text">基于视图的读控制</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/06/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/Safari%20can't%20open%20the%20page%20localhost%204000%20because%20Safari%20can't%20find%20the%20server%20localhost/" title="Safari can't access localhost"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz3uqr3kl4j31bt0u0wfn.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Safari can't access localhost"/></a><div class="content"><a class="title" href="/2022/02/06/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/Safari%20can't%20open%20the%20page%20localhost%204000%20because%20Safari%20can't%20find%20the%20server%20localhost/" title="Safari can't access localhost">Safari can't access localhost</a><time datetime="2022-02-06T08:11:03.946Z" title="Created 2022-02-06 16:11:03">2022-02-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/21/post/%E6%9D%82%E9%A1%B9/%E7%99%BE%E7%A7%91/%E7%BE%8E%E5%9B%BD%E6%97%B6%E9%97%B4/" title="美国时间"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz3w6qwz4kj30m80endgz.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美国时间"/></a><div class="content"><a class="title" href="/2022/01/21/post/%E6%9D%82%E9%A1%B9/%E7%99%BE%E7%A7%91/%E7%BE%8E%E5%9B%BD%E6%97%B6%E9%97%B4/" title="美国时间">美国时间</a><time datetime="2022-01-21T09:16:48.718Z" title="Created 2022-01-21 17:16:48">2022-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/29/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--计组"/></a><div class="content"><a class="title" href="/2021/11/29/post/%E8%80%83%E7%A0%94/847--%E8%AE%A1%E7%BB%84/" title="847--计组">847--计组</a><time datetime="2021-11-29T06:27:23.000Z" title="Created 2021-11-29 14:27:23">2021-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/28/post/%E8%80%83%E7%A0%94/847--%E7%BD%91%E7%BB%9C/" title="847--网络"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwfkw2ngunj31hc0u0jv8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="847--网络"/></a><div class="content"><a class="title" href="/2021/11/28/post/%E8%80%83%E7%A0%94/847--%E7%BD%91%E7%BB%9C/" title="847--网络">847--网络</a><time datetime="2021-11-28T08:07:47.000Z" title="Created 2021-11-28 16:07:47">2021-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/mac-%E8%BD%AF%E4%BB%B6/" title="mac 软件"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwqcquykkmj31q20u0q6y.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 软件"/></a><div class="content"><a class="title" href="/2021/11/08/post/%E6%9D%82%E9%A1%B9/%E9%85%8D%E7%BD%AE/mac-%E8%BD%AF%E4%BB%B6/" title="mac 软件">mac 软件</a><time datetime="2021-11-08T07:40:31.466Z" title="Created 2021-11-08 15:40:31">2021-11-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
