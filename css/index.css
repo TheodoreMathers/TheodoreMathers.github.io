@@ -3022,6 +3022,9 @@ blockquote footer cite:before {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
+#aside-content .card-categories .card-category-list > .parent > .child {
+  display: none;
+}
 #aside-content .card-webinfo .webinfo .webinfo-item {
   display: -webkit-box;
   display: -moz-box;
@@ -3461,6 +3464,13 @@ blockquote footer cite:before {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+#footer:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  content: '';
 }
 #footer-wrap {
   position: relative;
@@ -4489,6 +4499,7 @@ blockquote footer cite:before {
 #sidebar #sidebar-menus .menus_items .menus_item_child {
   margin: 0;
   list-style: none;
+  display: none;
 }
 #vcomment {
   font-size: 1.1em;
